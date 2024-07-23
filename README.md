@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11510193.svg)](https://doi.org/10.5281/zenodo.11510193)
 
 
-**GeneralTools** is a set of functions designed to help working with any kind of digital data and (data) files. 
+**GeneralTools for Scientists** is a set of functions designed to help working with any kind of digital data and (data) files. 
 
 There are currently two different pseudo classes in **GeneralTools**, which are stand-alone (they do not depend on each other): **HandyTools** and **DataTools**. 
 The class **PyQtInformationDialog**  is only useful when developing GUIs with PyQt. Please ignore it if this is not your case.
@@ -40,7 +40,7 @@ The Cython and C++ code and the compiled libraries are in the `./PYtoCPP/DataToo
   ```
 Note that you might have to install Cython and/or some other compilers (and/or XCode on Mac) before you can compile, it depends on your computer's setup, and Python distribution and packages.
 
-Please find the documentation on how to use **GeneralTools** [here](https://generaltools-for-scientists.readthedocs.io/en/latest/index.html).
+Please find the documentation on how to use **GeneralTools*for Scientists* [here](https://generaltools-for-scientists.readthedocs.io/en/latest/index.html).
 
 
 
