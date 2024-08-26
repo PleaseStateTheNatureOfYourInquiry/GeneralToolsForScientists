@@ -374,20 +374,24 @@ With this function, the speed of execution of a piece of code can be evaluated. 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="HandyTools.HandyTools.plotErrorBars">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">HandyTools.</span></span><span class="sig-name descname"><span class="pre">plotErrorBars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xErrors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yErrors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HandyTools.HandyTools.plotErrorBars" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">HandyTools.</span></span><span class="sig-name descname"><span class="pre">plotErrorBars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xErrors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xErrorsUpperLimit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yErrors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yErrorsUpperLimit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colours</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'blue'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HandyTools.HandyTools.plotErrorBars" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xValues</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the x-values.</p></li>
 <li><p><strong>yValues</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the y-values.</p></li>
-<li><p><strong>xErrors</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the x-erros.</p></li>
-<li><p><strong>yErrors</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the y-errors.</p></li>
+<li><p><strong>xErrors</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the x-erros. In case the error bars are not symmetrical, this is the lower limit.</p></li>
+<li><p><strong>xErrorsUpperLimit</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the x-erros upper limits, in case the error bars are not symmetrical.</p></li>
+<li><p><strong>yErrors</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the y-errors. In case the error bars are not symmetrical, this is the lower limit.</p></li>
+<li><p><strong>yErrorsUpperLimit</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – list with the y-erros upper limits, in case the error bars are not symmetrical.</p></li>
 <li><p><strong>colours</strong> (<em>str</em>) – string, default = ‘blue’.</p></li>
 </ul>
 </dd>
 </dl>
 <p><strong>Description:</strong>
-Plot horizontal (x) and / or vertical (y) error bars on any active plot.</p>
+Plot horizontal (x) and / or vertical (y) error bars on any active plot. The errors are provided as lists or NumPy arrays, that needs to have the same lengths
+as the values. In case the error bars are not symmetrical, the x(y)Error will be considered the list with the lower limits and the x(y)ErrorsUpperLimits will be
+the upper limits.</p>
 </dd></dl>
 
 </section>
@@ -404,7 +408,7 @@ Plot horizontal (x) and / or vertical (y) error bars on any active plot.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Jul 18, 2024, 4:54:20 PM.
+      <span class="lastupdated">Last updated on Aug 26, 2024, 7:34:01 PM.
       </span></p>
   </div>
 

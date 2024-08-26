@@ -2,7 +2,7 @@
 # Author: Maarten Roos-Serote
 # ORCID author: 0000 0001 5001 1347
 
-currentVersionHandyTools = '20240717'
+currentVersionHandyTools = '20240826'
 
 # Standard imports.
 import os
@@ -631,7 +631,7 @@ class HandyTools:
 
     # Draw horizontal 
     @staticmethod
-    def plotErrorBars (xValues = [], yValues = [], xErrors = [], yErrors = [], colours = 'blue'):
+    def plotErrorBars (xValues = [], yValues = [], xErrors = [], xErrorsUpperLimit = [], yErrors = [], yErrorsUpperLimit = [], colours = 'blue'):
         '''
         :param xValues: list with the x-values.
         :type xValues: list [float]
@@ -639,26 +639,37 @@ class HandyTools:
         :param yValues: list with the y-values.
         :type yValues: list [float]
 
-        :param xErrors: list with the x-erros.
+        :param xErrors: list with the x-erros. In case the error bars are not symmetrical, this is the lower limit.
         :type xErrors: list [float]
 
-        :param yErrors: list with the y-errors.
+        :param xErrorsUpperLimit: list with the x-erros upper limits, in case the error bars are not symmetrical.
+        :type xErrorsUpperLimit: list [float]
+
+        :param yErrors: list with the y-errors. In case the error bars are not symmetrical, this is the lower limit.
         :type yErrors: list [float]
+
+        :param yErrorsUpperLimit: list with the y-erros upper limits, in case the error bars are not symmetrical.
+        :type yErrorsUpperLimit: list [float]
+
         
         :param colours: string, default = 'blue'.
         :type colours: str
         
         
         **Description:**
-        Plot horizontal (x) and / or vertical (y) error bars on any active plot.
+        Plot horizontal (x) and / or vertical (y) error bars on any active plot. The errors are provided as lists or NumPy arrays, that needs to have the same lengths
+        as the values. In case the error bars are not symmetrical, the x(y)Error will be considered the list with the lower limits and the x(y)ErrorsUpperLimits will be
+        the upper limits.
         '''
 
-
+        # Check if the data is of the right type, either list of NumPy array.
         validListTypes = [list, np.ndarray]
         if type (xValues) not in validListTypes or \
            type (yValues) not in validListTypes or \
            type (xErrors) not in validListTypes or \
-           type (yErrors) not in validListTypes:
+           type (xErrorsUpperLimit) not in validListTypes or \
+           type (yErrors) not in validListTypes or \
+           type (yErrorsUpperLimit) not in validListTypes:
         
             print ('')
             print ('---WARNING---')
@@ -731,11 +742,26 @@ class HandyTools:
                 
             if numberOfValuesXErrors:
             
-                plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors[iValue], xmax = xValues [iValue] + xErrors[iValue], color = colourPerValue [iValue] )
+                # If the  xErrorsUpperLimit  have been defined, then the  xErrors  is the lower limit.
+                if len (xErrorsUpperLimit):
+                
+                    plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+
+                    
+                else:                
+            
+                    plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
 
             if numberOfValuesYErrors:
+  
+                # If the  yErrorsUpperLimit  have been defined, then the  yErrors  is the lower limit.
+                if len (yErrorsUpperLimit):
+
+                    plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+
+                else:
                         
-                plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors[iValue], color = colourPerValue [iValue] )
+                    plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
     
     
         
