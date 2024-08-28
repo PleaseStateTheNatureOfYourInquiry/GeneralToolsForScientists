@@ -293,20 +293,21 @@ For a bandpass filter this could look like:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.linearLeastSquare">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">linearLeastSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.linearLeastSquare" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">linearLeastSquare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fractionBeyondXRange</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.linearLeastSquare" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>xInput</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – the x-values of the data to fit.</p></li>
 <li><p><strong>yInput</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – the y-values of the data to fit.</p></li>
 <li><p><strong>weights</strong> (<em>list</em><em> [</em><em>float</em><em>]</em>) – the weights of the data to fit.</p></li>
+<li><p><strong>fractionBeyondXRange</strong> (<em>float</em>) – the fraction of the xInput range beyond which to calculate the fitting line (default = 0.1).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>a, b, uncertaintyA, uncertaintyB, rSquared</p>
+<dd class="field-even"><p>a, b, uncertaintyA, uncertaintyB, rSquared, xValuesFitLine, yValuesFitLine</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float, float, float, float, float</p>
+<dd class="field-odd"><p>float, float, float, float, float, NumPy array (2), NumPy array (2)</p>
 </dd>
 </dl>
 <p><strong>Description:</strong>
@@ -507,7 +508,7 @@ into the np.random.normal method as the standard deviation of the normal distrib
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Jul 18, 2024, 4:54:20 PM.
+      <span class="lastupdated">Last updated on Aug 28, 2024, 9:28:17 AM.
       </span></p>
   </div>
 

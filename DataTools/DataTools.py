@@ -2,7 +2,7 @@
 # Author: Maarten Roos-Serote
 # ORCID author: 0000 0001 5001 1347
 
-DataToolsVersion = '20240604'
+DataToolsVersion = '20240828'
 
 # Standard imports.
 import os
@@ -431,7 +431,7 @@ class DataTools:
 
     # Determine the values of the variables a and b for the linear least square solution y  =  a * x  +  b.
     @staticmethod
-    def linearLeastSquare ( xInput, yInput, weights = [] ):
+    def linearLeastSquare ( xInput, yInput, weights = [], fractionBeyondXRange = 0.1 ):
         '''
         :param xInput: the x-values of the data to fit.
         :type xInput: list [float]
@@ -441,9 +441,14 @@ class DataTools:
 
         :param weights: the weights of the data to fit.
         :type weights: list [float]
+        
+        :param fractionBeyondXRange: the fraction of the xInput range beyond which to calculate the fitting line (default = 0.1).
+        :type fractionBeyondXRange: float
+        
+        
 
-        :return: a, b, uncertaintyA, uncertaintyB, rSquared
-        :rtype: float, float, float, float, float
+        :return: a, b, uncertaintyA, uncertaintyB, rSquared, xValuesFitLine, yValuesFitLine
+        :rtype: float, float, float, float, float, NumPy array (2), NumPy array (2)
         
         
         **Description:**
@@ -496,8 +501,15 @@ class DataTools:
         dataAverage = np.sum (y) / numberOfValues
         squaredSumTotal = np.sum ( (y - dataAverage) ** 2 ) 
         rSquared = 1 - squaredSumResiduals / squaredSumTotal
-                
-        return a, b, uncertaintyA, uncertaintyB, rSquared
+       
+       
+        # Calculate and return the fitted line with two points slightly outside the range of the xInput values.       
+        xRange =  max (xInput) - min (xInput)
+        xValuesFitLine = np.asarray ( [ min (xInput) - fractionBeyondXRange * xRange, max (xInput)  + fractionBeyondXRange * xRange ] )
+        yValuesFitLine = a * xValuesFitLine + b        
+              
+        
+        return a, b, uncertaintyA, uncertaintyB, rSquared, xValuesFitLine, yValuesFitLine
 
 
 
