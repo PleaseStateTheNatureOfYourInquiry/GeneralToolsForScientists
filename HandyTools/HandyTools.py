@@ -631,7 +631,7 @@ class HandyTools:
 
     # Draw horizontal 
     @staticmethod
-    def plotErrorBars (xValues = [], yValues = [], xErrors = [], xErrorsUpperLimit = [], yErrors = [], yErrorsUpperLimit = [], colours = 'blue'):
+    def plotErrorBars (xValues = [], yValues = [], xErrors = [], xErrorsUpperLimit = [], yErrors = [], yErrorsUpperLimit = [], colours = 'blue', axis = None):
         '''
         :param xValues: list with the x-values.
         :type xValues: list [float]
@@ -651,9 +651,11 @@ class HandyTools:
         :param yErrorsUpperLimit: list with the y-erros upper limits, in case the error bars are not symmetrical.
         :type yErrorsUpperLimit: list [float]
 
-        
         :param colours: string, default = 'blue'.
         :type colours: str
+        
+        :param axis: axis object when target plot is created with :code:`fig, ax = plt.subplot` instruction.
+        :type axis: obj
         
         
         **Description:**
@@ -744,24 +746,51 @@ class HandyTools:
             
                 # If the  xErrorsUpperLimit  have been defined, then the  xErrors  is the lower limit.
                 if len (xErrorsUpperLimit):
-                
-                    plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+
+                    if axis:
+                    
+                        axis.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+                    
+                    else:
+                                    
+                        plt.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
 
                     
                 else:                
             
-                    plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
+                    if axis:
+
+                        axis.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
+
+                    
+                    else:
+                    
+                        plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
 
             if numberOfValuesYErrors:
   
                 # If the  yErrorsUpperLimit  have been defined, then the  yErrors  is the lower limit.
                 if len (yErrorsUpperLimit):
 
-                    plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+
+                    if axis:
+
+                        axis.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+
+
+                    else:
+                    
+                        plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
 
                 else:
+                
+                    if axis:
+
+                        axis.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
+                    
+                    else:
                         
-                    plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
+                        plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
     
     
         
