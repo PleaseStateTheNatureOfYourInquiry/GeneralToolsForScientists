@@ -50,6 +50,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.createPathToFile"><code class="docutils literal notranslate"><span class="pre">HandyTools.createPathToFile()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.getTextFileContent"><code class="docutils literal notranslate"><span class="pre">HandyTools.getTextFileContent()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.readTable"><code class="docutils literal notranslate"><span class="pre">HandyTools.readTable()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.getTableHeader"><code class="docutils literal notranslate"><span class="pre">HandyTools.getTableHeader()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.saveContentToNumpyWithCustomExtension"><code class="docutils literal notranslate"><span class="pre">HandyTools.saveContentToNumpyWithCustomExtension()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.getDateAndTime"><code class="docutils literal notranslate"><span class="pre">HandyTools.getDateAndTime()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#HandyTools.HandyTools.getDateAndTimeString"><code class="docutils literal notranslate"><span class="pre">HandyTools.getDateAndTimeString()</span></code></a></li>
@@ -242,6 +243,28 @@ In the example above, the 2nd and  4th columns are int and the 3rd column a floa
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="HandyTools.HandyTools.getTableHeader">
+<span class="sig-prename descclassname"><span class="pre">HandyTools.</span></span><span class="sig-name descname"><span class="pre">getTableHeader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">headerLines</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addC_END</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HandyTools.HandyTools.getTableHeader" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tableFileName</strong> (<em>str</em>) – file name of the table file.</p></li>
+<li><p><strong>headerLines</strong> (<em>list &lt;str&gt;</em>) – list with each line in the header after the file name and the creation date.</p></li>
+<li><p><strong>addC_END</strong> (<em>bool</em>) – , default is <code class="code docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string with the complete  header text.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p><strong>Description</strong>: Create and return a table header.
+Each element in the <code class="code docutils literal notranslate"><span class="pre">headerLines</span></code> list is a separate line in the header.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="HandyTools.HandyTools.saveContentToNumpyWithCustomExtension">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">HandyTools.</span></span><span class="sig-name descname"><span class="pre">saveContentToNumpyWithCustomExtension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contentToSave</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extensionWithoutDot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overWrite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#HandyTools.HandyTools.saveContentToNumpyWithCustomExtension" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
@@ -409,7 +432,7 @@ the upper limits.</p>
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Oct 17, 2024, 11:33:44 PM.
+      <span class="lastupdated">Last updated on Nov 04, 2024, 2:53:42 PM.
       </span></p>
   </div>
 

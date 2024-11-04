@@ -920,27 +920,50 @@ class DataTools:
 
     #
     @staticmethod
-    def getNanFreeNumpyArray (dataValues):
+    def getNanFreeNumpyArray (dataValues, replaceWithValue = False, valueToReplace = 0.):
         '''
         :param dataValues: complete list of data values.
         :type dataValues: list [float] or NumPy array (one dimension)
         
-        :return: list of data values with any NaN values removed.
+        :param replaceWithValue: replace NaN element with zero value if :code:`True`, default :code:`False`.
+        :type replaceWithValue: bool
+        
+        :param valueToReplace: value to replace NaN elements if :code:`replaceWithZero == True`, default = 0.
+        :type valueToReplace: float
+        
+        :return: list of data values with any NaN values removed or replaced with :code:`valueToReplace`. value.
         :rtype: NumPy array 
         
         **Description:**
-        Remove all the NaN values from a list of data values and return the cleansed list as a NumPy array (one dimension).
+        Remove or replace with zero values all the NaN values from a list of data values and return the cleansed list as a NumPy array (one dimension).
         '''
         
         if type (dataValues) == list:
                 
-            iNaNValues = np.isnan ( np.asarray (dataValues) )           
-            return np.asarray (dataValues) [~iNaNValues]
+            iNaNValues = np.isnan ( np.asarray (dataValues) )  
+            
+            if replaceWithValue:
+            
+                dataValues = np.asarray (dataValues)
+                dataValues [iNaNValues] = valueToReplace
+                return dataValues
+               
+            else:
+              
+                return np.asarray (dataValues) [~iNaNValues]
         
         else:
         
-            iNaNValues = np.isnan (dataValues)            
-            return dataValues [~iNaNValues]
+            iNaNValues = np.isnan (dataValues)  
+
+            if replaceWithValue:
+
+                dataValues [iNaNValues] = valueToReplace
+                return dataValues
+
+            else:
+                                  
+                return dataValues [~iNaNValues]
             
 
 

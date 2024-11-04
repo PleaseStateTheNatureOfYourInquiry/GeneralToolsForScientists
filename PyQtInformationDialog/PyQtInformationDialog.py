@@ -20,13 +20,13 @@ class informationDialog ():
     :param messageText: message text printed in the window.
     :type messageText: str
 
-    :param yesAndCancel: if ``True`` and  numberOfChoices == 2, then create **Yes** and **Cancel** buttons, with **Cancel** button set to default, else create **Yes** and **No** button, with **Yes** the default.
+    :param yesAndCancel: if :code:`True` and  numberOfChoices == 2, then create **Yes** and **Cancel** buttons, with **Cancel** button set to default, else create **Yes** and **No** button, with **Yes** the default.
     :type yesAndCancel: bool
     
     :param numberOfChoices: When set to 1, create one **OK** button. When set to 2, create **Yes* and **Cancel** or **No** buttons (see yesAndCancel). When set to 3, create **Yes**, **No**, **Cancel** buttons, with **Cancel** as default.
     :type numberOfChoices: int
 
-    **Description:##
+    **Description:**
     Create an information dialog window, with one (OK), two (Yes, Cancel) or three (Yes, No, Cancel) options.
     '''
 

@@ -36,6 +36,9 @@ HandyTools
 .. automethod:: HandyTools.HandyTools.readTable
 
 
+.. automethod:: HandyTools.HandyTools.getTableHeader
+
+
 .. automethod:: HandyTools.HandyTools.saveContentToNumpyWithCustomExtension
 
 

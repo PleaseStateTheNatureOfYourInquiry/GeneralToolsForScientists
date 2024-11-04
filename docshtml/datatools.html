@@ -457,20 +457,24 @@ If <code class="code docutils literal notranslate"><span class="pre">removeNaN</
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.getNanFreeNumpyArray">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getNanFreeNumpyArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getNanFreeNumpyArray" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getNanFreeNumpyArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">replaceWithValue</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valueToReplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getNanFreeNumpyArray" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dataValues</strong> (<em>list</em><em> [</em><em>float</em><em>] or </em><em>NumPy array</em><em> (</em><em>one dimension</em><em>)</em>) – complete list of data values.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataValues</strong> (<em>list</em><em> [</em><em>float</em><em>] or </em><em>NumPy array</em><em> (</em><em>one dimension</em><em>)</em>) – complete list of data values.</p></li>
+<li><p><strong>replaceWithValue</strong> (<em>bool</em>) – replace NaN element with zero value if <code class="code docutils literal notranslate"><span class="pre">True</span></code>, default <code class="code docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>valueToReplace</strong> (<em>float</em>) – value to replace NaN elements if <code class="code docutils literal notranslate"><span class="pre">replaceWithZero</span> <span class="pre">==</span> <span class="pre">True</span></code>, default = 0.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>list of data values with any NaN values removed.</p>
+<dd class="field-even"><p>list of data values with any NaN values removed or replaced with <code class="code docutils literal notranslate"><span class="pre">valueToReplace</span></code>. value.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>NumPy array</p>
 </dd>
 </dl>
 <p><strong>Description:</strong>
-Remove all the NaN values from a list of data values and return the cleansed list as a NumPy array (one dimension).</p>
+Remove or replace with zero values all the NaN values from a list of data values and return the cleansed list as a NumPy array (one dimension).</p>
 </dd></dl>
 
 <dl class="py method">
@@ -508,7 +512,7 @@ into the np.random.normal method as the standard deviation of the normal distrib
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Oct 17, 2024, 11:33:44 PM.
+      <span class="lastupdated">Last updated on Nov 04, 2024, 2:53:42 PM.
       </span></p>
   </div>
 

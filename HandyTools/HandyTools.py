@@ -183,7 +183,6 @@ class HandyTools:
         
             fullPathToCreate = fullPath
 
-        
         try:
         
             os.makedirs (fullPathToCreate)
@@ -395,9 +394,47 @@ class HandyTools:
 
             
         return tableContentDataNumbers, tableContentDataStrings, tableContentHeader
-                
 
-                   
+
+
+    # Create and return a table header.
+    def getTableHeader (tableFileName = 'tableFile.dat', headerLines = [], addC_END = True):
+        '''
+        :param tableFileName: file name of the table file.
+        :type tableFileName: str
+        
+        :param headerLines: list with each line in the header after the file name and the creation date.
+        :type headerLines: list <str>
+
+        :param addC_END: , default is :code:`True`.
+        :type addC_END: bool
+        
+        :return: string with the complete  header text.
+        :rtype: str
+        
+        **Description**: Create and return a table header.
+        Each element in the :code:`headerLines` list is a separate line in the header.
+        
+        '''
+                
+        tableHeaderString = '\n'
+        tableHeaderString += ' File: {}\n'.format (tableFileName) 
+        tableHeaderString += ' Created at {}\n'.format ( HandyTools.getDateAndTimeString () )
+        tableHeaderString += '\n'
+        
+        for headerLine in headerLines:
+        
+            tableHeaderString += headerLine + '\n'
+
+        if addC_END:
+        
+            tableHeaderString += 'C_END\n'       
+        
+        
+        return tableHeaderString
+    
+    
+                                       
     # Save content (list, dictionary, ...) to a numpy file with a custom extension.
     @staticmethod
     def saveContentToNumpyWithCustomExtension (contentToSave, fileName, extensionWithoutDot, overWrite = False):
