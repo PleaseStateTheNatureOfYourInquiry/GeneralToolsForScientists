@@ -398,10 +398,14 @@ class HandyTools:
 
 
     # Create and return a table header.
-    def getTableHeader (tableFileName = 'tableFile.dat', headerLines = [], addC_END = True):
+    @staticmethod
+    def getTableHeader (tableFileName = 'tableFile.dat', creationScript = '', headerLines = [], addC_END = True):
         '''
         :param tableFileName: file name of the table file.
         :type tableFileName: str
+        
+        :param creationScript: name of the script with which the table is created. This information will not be included if left empty.
+        :type creationScript: str
         
         :param headerLines: list with each line in the header after the file name and the creation date.
         :type headerLines: list <str>
@@ -420,6 +424,11 @@ class HandyTools:
         tableHeaderString = '\n'
         tableHeaderString += ' File: {}\n'.format (tableFileName) 
         tableHeaderString += ' Created at {}\n'.format ( HandyTools.getDateAndTimeString () )
+        
+        if creationScript != '':
+        
+            tableHeaderString += ' Created with {}'.format (creationScript)
+        
         tableHeaderString += '\n'
         
         for headerLine in headerLines:
