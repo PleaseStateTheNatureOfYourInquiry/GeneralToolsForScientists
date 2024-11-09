@@ -437,7 +437,12 @@ class HandyTools:
 
         if addC_END:
         
-            tableHeaderString += 'C_END'       
+            tableHeaderString += 'C_END' 
+            
+        else:
+        
+            tableHeaderString = tableHeaderString [:-1]
+                  
         
         
         return tableHeaderString
