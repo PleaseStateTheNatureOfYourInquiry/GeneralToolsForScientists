@@ -911,13 +911,11 @@ class DataTools:
                     
             if PYtoCPP and DataWranglingToolsPYtoCPPExists:
             
-                print ('PYtoCPP')
                 averageValue, standardDeviation, variance = DataWranglingToolsPYtoCPP.getAverageVarAndSDPYtoCPP (dataValues)
 
 
             elif not PYtoCPP or not DataWranglingToolsPYtoCPPExists:
 
-                print ('not PYtoCPP')
                 averageValue = np.average (dataValues)
                 standardDeviation = np.std (dataValues)
                 variance = standardDeviation ** 2
