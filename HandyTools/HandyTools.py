@@ -682,7 +682,7 @@ class HandyTools:
 
     # Draw horizontal 
     @staticmethod
-    def plotErrorBars (xValues = [], yValues = [], xErrors = [], xErrorsUpperLimit = [], yErrors = [], yErrorsUpperLimit = [], colours = 'blue', axis = None):
+    def plotErrorBars (xValues = [], yValues = [], xErrors = [], xErrorsUpperLimit = [], yErrors = [], yErrorsUpperLimit = [], colours = 'blue', alpha = 0.5, axis = None):
         '''
         :param xValues: list with the x-values.
         :type xValues: list [float]
@@ -704,6 +704,9 @@ class HandyTools:
 
         :param colours: string, default = 'blue'.
         :type colours: str
+        
+        :param alpha: the opacity of the error bars, default is 1 (fully visible).
+        :type alpha: float
         
         :param axis: axis object when target plot is created with :code:`fig, ax = plt.subplot` instruction.
         :type axis: obj
@@ -800,23 +803,27 @@ class HandyTools:
 
                     if axis:
                     
-                        axis.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+                        axis.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], 
+                                      color = colourPerValue [iValue], alpha = alpha )
                     
                     else:
                                     
-                        plt.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+                        plt.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrorsUpperLimit [iValue],
+                                     color = colourPerValue [iValue], alpha = alpha )
 
                     
                 else:                
             
                     if axis:
 
-                        axis.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
+                        axis.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue],
+                                      color = colourPerValue [iValue], alpha = alpha )
 
                     
                     else:
                     
-                        plt.hlines (y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], color = colourPerValue [iValue] )
+                        plt.hlines ( y = yValues [iValue], xmin = xValues [iValue] - xErrors [iValue], xmax = xValues [iValue] + xErrors [iValue], 
+                                     color = colourPerValue [iValue], alpha = alpha )
 
             if numberOfValuesYErrors:
   
@@ -826,22 +833,26 @@ class HandyTools:
 
                     if axis:
 
-                        axis.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+                        axis.vlines ( x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue],
+                                      color = colourPerValue [iValue], alpha = alpha )
 
 
                     else:
                     
-                        plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue], color = colourPerValue [iValue] )
+                        plt.vlines ( x = xValues [iValue], ymin = yValues [iValue] - yErrors [iValue], ymax = yValues [iValue] + yErrorsUpperLimit [iValue],
+                                     color = colourPerValue [iValue], alpha = alpha )
 
                 else:
                 
                     if axis:
 
-                        axis.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
+                        axis.vlines ( x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue],
+                                      color = colourPerValue [iValue], alpha = alpha )
                     
                     else:
                         
-                        plt.vlines (x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue], color = colourPerValue [iValue] )
+                        plt.vlines ( x = xValues [iValue], ymin = yValues [iValue] - yErrors[iValue], ymax = yValues [iValue] + yErrors [iValue],
+                                     color = colourPerValue [iValue], alpha = alpha )
     
     
         

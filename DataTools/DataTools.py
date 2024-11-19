@@ -2,7 +2,7 @@
 # Author: Maarten Roos-Serote
 # ORCID author: 0000 0001 5001 1347
 
-DataToolsVersion = '20240828'
+DataToolsVersion = '20241119'
 
 # Standard imports.
 import os
@@ -23,61 +23,99 @@ from scipy import signal
 
 
 # Custom imports of the Python to C++ libraries.
-import DataWranglingToolsPYtoCPP
-import FilterToolsPYtoCPP
+# If the libraries cannot be loaded, then set to the corresponding boolean to False, so that the methods that call these libraries revert to standard Python.
+DataWranglingToolsPYtoCPPExists = True
+try:
+
+    import DataWranglingToolsPYtoCPP
+
+
+except:
+
+    DataWranglingToolsPYtoCPPExists = False
+
+
+FilterToolsPYtoCPPExists = True
+try:
+
+    import FilterToolsPYtoCPP
+
+except:
+
+    FilterToolsPYtoCPPExists = False
 
 
 
 class DataTools:
     """
-    DataTools is a pseudo-class (no instantiation, no 'self'), bundling a couple of functions to work with all sorts of data.
+    DataTools is a pseudo-class (no instantiation, no 'self'), bundling some functions with which different operators with and on numerical data can be done.
+    Some of the functions call C++ modules specifically written for DataTools. If these modules are not present or cannot be read, 
+    then the same functionality is performed with Python, which might be slower for large amounts of data.
     """
 
 
     # Used in the  getUncertaintyLevelInElectrode  method and by  AnnotationTool  in te NoiseViewer method.
     # Determine the list of amplitude segments for the electrogram.
     @staticmethod
-    def getSegmentSpecsFromDataValues (dataValues, PYtoCPP = True):
-        '''    
-        :param dataValues: list (one dimension) of data values. The values in the ``dataValues`` list are converted to int16 type (for now).
-        :type dataValues: list
+    def getSegmentSpecsFromDataValues (dataValues, PYtoCPP = True, convertToShort = True):
+        '''
+        :param dataValues: list (one dimension) of data values. The values in the :code:`dataValues` list are converted to 16-bit integers if code:`PYtoCPP == True`.
+        :type dataValues: list or NumPy array
 
-        :param PYtoCPP: at the time of writing, the user can still chose to use Python to analyse the ``dataValues`` by setting ``PYtoCPP`` to ``False``. The result is less comprehensive and the runtime significantly longer.
-        :type PYtoCPP: boolean; default = True
+        :param PYtoCPP: if :code:`False` use Python, default :code:`True`. 
+        :type PYtoCPP: bool
 
-        :return: all the characteristics of the segments comprised by the list of ``dataValues`` (see **Description** below) when ``PYtoCPP = True``, or list of amplitudes and start indices when ``PYtoCPP = False``.
-        :rtype: tuple when ``PYtoCPP = True`` or two lists, first list [same type as ``dataValues``] and second list [int]
+        :param convertToShort: if :code:`True` convert the values in :code:`dataValues` to 16-bit integers, default :code:`True`. 
+        :type convertToShort: bool
+
+        :return: characteristics of the *segments* defined by :code:`dataValues` (see **Description**) when :code:`PYtoCPP = True`, or list of amplitudes and start indices when :code:`PYtoCPP = False`.
+        :rtype: tuple (:code:`PYtoCPP = True`);  list, list (:code:`PYtoCPP = False`)
 
 
-        **Description:**
-        With this function a list of (wiggling) data values is analysed to determine all the specifications in terms of its segments. A segment in a wiggling data values line is a section of the line from a local minimum to the next local maximum or a local maximum to the next local minimum. The specifications are returned in terms of a tuple of NumPy arrays and numbers:
+        **Description**:
+        With this function a list of data values is analysed in terms of its *segments*. A segment is defined as a section from local minimum to the next local maximum or
+        local maximum to the next local minimum. 
+        The specifications are returned in terms of a tuple of NumPy arrays and numbers (code:`PYtoCPP == True`) with the following
+        elements:
     
-            | [0]  numberOfSegments
-            | [1]  segmentStartIndices - the start indices of each segment (the local minima and maxima).
-            | [2]  segmentAmplitudes - the corresponding amplitudes between local extremes in units of ADU.
-            | [3]  segmentSlopes - the corresponding slopes in units of ADU / time sample.
-            | [4]  segmentDurations - the number of time samples between local extremes.
-            | [5]  numberOfSegmentsNegative - subsection of the list above with only the segments from local maxima to the next local minima.
-            | [6]  segmentStartIndicesNegative [0:numberOfSegmentsNegative]
-            | [7]  iSteepestNegativeSlopeSegment
-            | [8]  iSegmentStartIndicesSteepestNegativeSlope
-            | [9]  numberOfSegmentsPositive - subsection of the list above with only the segments from local minima to the next local maxima.
-            | [10] segmentStartIndicesPositive [0:numberOfSegmentsPositive]
-            | [11] iSteepestPositiveSlopeSegment
-            | [12] iSegmentStartIndicesSteepestPositiveSlope
+            | [0]  numberOfSegments;
+            | [1]  segmentStartIndices - the start indices of each segment (the local minima and maxima);
+            | [2]  segmentAmplitudes - the corresponding amplitudes between local extremes;
+            | [3]  segmentSlopes - the corresponding slopes;
+            | [4]  segmentDurations - the number of steps between local extremes;
+            | [5]  numberOfSegmentsNegative - subsection of the list above with only the segments from local maxima to the next local minima;
+            | [6]  segmentStartIndicesNegative [ 0 : numberOfSegmentsNegative ];
+            | [7]  iSteepestNegativeSlopeSegment;
+            | [8]  iSegmentStartIndicesSteepestNegativeSlope;
+            | [9]  numberOfSegmentsPositive - subsection of the list above with only the segments from local minima to the next local maxima;
+            | [10] segmentStartIndicesPositive [ 0 : numberOfSegmentsPositive ];
+            | [11] iSteepestPositiveSlopeSegment;
+            | [12] iSegmentStartIndicesSteepestPositiveSlope;
  
-        When calling this function with :code:`PYtoCPP = False`, only list of segment amplitudes and segment start indices is being returned.           
+        If :code:`PYtoCPP = True`, only lists of segment amplitudes and segment start indices are being returned.
+        
+        .. note::
+        
+            Note that :code:`dataValues` are converted to 16-bit integers when :code:`PYtoCPP = True`. 
+            If :code:`PYtoCPP = False`, then Tte user can choose whether to convert :code:`dataValues` or not by setting the :code:`convertToShort` boolean. 
+
+                 
         '''
 
-        # Run this function with the C++ core per default.
-        if PYtoCPP:
+        # Run the C++ version.
+        if PYtoCPP and DataWranglingToolsPYtoCPPExists:
 
             return DataWranglingToolsPYtoCPP.getSegmentSpecsFromDataValuesPYtoCPP (dataValues)
 
 
-        # Run the Python version (which needs updating to match the C++ code!).
-        else:
+        # Run the Python version.
+        elif not PYtoCPP or not DataWranglingToolsPYtoCPPExists:
                 
+            if convertToShort:
+            
+                dataValues = np.asarray (dataValues, dtype = np.int16)
+
+            
             np.seterr (all = 'ignore')
 
             segmentAmplitudes = []
@@ -108,22 +146,26 @@ class DataTools:
 
     #
     @staticmethod
-    def passAverageFilter (dataValues, windowWidth):
+    def passAverageFilter (dataValues, windowWidth, PYtoCPP = True):
         '''
-        :param dataValues: list (one dimension) of data values that represent the signal to be filtered.
-        :type dataValues: list 
+        :param dataValues: list of data values that represent the signal to be filtered.
+        :type dataValues: list or NumPy array  
 
-        :param windowWidth: width of the window: number of values in the averaging window including the central value. This is always an uneven number.
+        :param windowWidth: width of the window which will include the central value. This is always an uneven number. If an even number is given, then :code:`windowWidth` will be increased by one.
         :type windowWidth: int
 
-        :return: signal ``dataValues`` filtered with a running average. 
+        :return: filtered data values.
         :rtype: list 
 
 
-        **Description:**
-        Use this function to perform a running average filtering of a list (one dimension) of data values. The total number of point in the averaging window is :code:`2 * windowWidth + 1`. At the beginning and the end of the list, filtering is done with the available data values. For example, the result for the first data value is the average of the first data value and the :code:`width` data values to the right. 
+        **Description**:
+        Use this function to perform a simple running average filtering of a list (one dimension) of data values. The total number of point in the averaging window is always
+        uneven and is equal to :code:`2 * ( windowWidth // 2 ) + 1`. If the user enter an even :code:`windowWidth`, then it is increased by one.
+        At the beginning and the end of the list, filtering is done with the available data values:
+        for example, the result for the first filtered value is the average of the first :code:`( windowWidth // 2 ) + 1` data values.
         
-        The noise level of the filtered set can be easily calculated from the noise level of the original data values, by dividing by the square root of the total number of data values in the averaging window. 
+        The noise level of the filtered set can be easily calculated from the noise level of the original data values, by dividing by the square root of the total
+        number of data values in the averaging window. 
         '''
 
         if windowWidth <= 0:
@@ -136,6 +178,12 @@ class DataTools:
         
         else:
               
+              
+            if type (dataValues) == list:
+            
+                dataValues = np.asarray (dataValues)
+
+            
             if not windowWidth % 2:
             
                 windowWidth += 1
@@ -145,7 +193,36 @@ class DataTools:
                 print (' Window width needs to be uneven number: reset to {} samples.'.format (windowWidth) )
     
                 
-            return FilterToolsPYtoCPP.passAverageFilterPYtoCPP (dataValues, windowWidth // 2)
+            if PYtoCPP and FilterToolsPYtoCPPExists:
+                        
+                return FilterToolsPYtoCPP.passAverageFilterPYtoCPP (dataValues, windowWidth // 2)
+        
+        
+            # If the compiled C++ module cannot be found ot if the user chooses to use Python over C++.
+            elif not PYtoCPP or not FilterToolsPYtoCPPExists:
+            
+                numberOfElements = len (dataValues)
+                dataValuesFiltered = np.zeros (numberOfElements)
+                halfWindowWidth = windowWidth // 2
+                        
+                # The first  halfWindowWidth  filtered data values are calculated with the available points, which is not the full window.
+                for iElement in range (0, halfWindowWidth):
+                
+                    dataValuesFiltered [iElement] = np.mean ( dataValues [ 0 : iElement + halfWindowWidth + 1 ] )
+                
+
+                # Calculate the filtered data values within the window centered on the current data value at index  iElement .
+                for iElement in range ( halfWindowWidth, numberOfElements - halfWindowWidth ):
+
+                    dataValuesFiltered [iElement] = np.mean ( dataValues [ iElement - halfWindowWidth : iElement + halfWindowWidth + 1 ] )   
+                    
+                
+                # The last  halfWindowWidth  filtered data values are calculated with the available points, which is not the full window.
+                for iElement in range ( numberOfElements - halfWindowWidth, numberOfElements ):
+                
+                    dataValuesFiltered [iElement] = np.mean ( dataValues [ iElement : ] )     
+
+                return dataValuesFiltered
         
 
 
@@ -805,13 +882,16 @@ class DataTools:
 
     #
     @staticmethod
-    def getAverageVarAndSDPYtoCPP (dataValues = [], removeNaN = False):
+    def getAverageVarAndSDPYtoCPP (dataValues = [], removeNaN = False, PYtoCPP = True):
         '''
         :param dataValues: list of data values.
         :type dataValues: list [float] or NumPy array (one dimension)
 
         :param removeNaN: if True then remove any NaN values from the list of data values.
         :type removeNaN: bool
+
+        :param PYtoCPP: the user can choose to use Python to analyse the :code:`dataValues` by setting :code:`PYtoCPP` to :code:`False`,  default = True
+        :type PYtoCPP: boolean
         
         :return: average, standard deviation and variance of the list of data values.
         :rtype: float, float, float.
@@ -828,8 +908,23 @@ class DataTools:
     
         if len (dataValues):
                     
-            averagevalues, standardDeviation, variance = DataWranglingToolsPYtoCPP.getAverageVarAndSDPYtoCPP (dataValues)
-            return averagevalues, standardDeviation, variance
+                    
+            if PYtoCPP and DataWranglingToolsPYtoCPPExists:
+            
+                print ('PYtoCPP')
+                averageValue, standardDeviation, variance = DataWranglingToolsPYtoCPP.getAverageVarAndSDPYtoCPP (dataValues)
+
+
+            elif not PYtoCPP or not DataWranglingToolsPYtoCPPExists:
+
+                print ('not PYtoCPP')
+                averageValue = np.average (dataValues)
+                standardDeviation = np.std (dataValues)
+                variance = standardDeviation ** 2
+                
+
+
+            return averageValue, standardDeviation, variance
 
         else:
         

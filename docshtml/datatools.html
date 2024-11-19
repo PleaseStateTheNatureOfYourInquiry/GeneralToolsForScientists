@@ -107,63 +107,76 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.getSegmentSpecsFromDataValues">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getSegmentSpecsFromDataValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PYtoCPP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getSegmentSpecsFromDataValues" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getSegmentSpecsFromDataValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PYtoCPP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">convertToShort</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getSegmentSpecsFromDataValues" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataValues</strong> (<em>list</em>) – list (one dimension) of data values. The values in the <code class="docutils literal notranslate"><span class="pre">dataValues</span></code> list are converted to int16 type (for now).</p></li>
-<li><p><strong>PYtoCPP</strong> (<em>boolean; default = True</em>) – at the time of writing, the user can still chose to use Python to analyse the <code class="docutils literal notranslate"><span class="pre">dataValues</span></code> by setting <code class="docutils literal notranslate"><span class="pre">PYtoCPP</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>. The result is less comprehensive and the runtime significantly longer.</p></li>
+<li><p><strong>dataValues</strong> (<em>list</em><em> or </em><em>NumPy array</em>) – list (one dimension) of data values. The values in the <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> list are converted to 16-bit integers if code:<cite>PYtoCPP == True</cite>.</p></li>
+<li><p><strong>PYtoCPP</strong> (<em>bool</em>) – if <code class="code docutils literal notranslate"><span class="pre">False</span></code> use Python, default <code class="code docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>convertToShort</strong> (<em>bool</em>) – if <code class="code docutils literal notranslate"><span class="pre">True</span></code> convert the values in <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> to 16-bit integers, default <code class="code docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>all the characteristics of the segments comprised by the list of <code class="docutils literal notranslate"><span class="pre">dataValues</span></code> (see <strong>Description</strong> below) when <code class="docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code>, or list of amplitudes and start indices when <code class="docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
+<dd class="field-even"><p>characteristics of the <em>segments</em> defined by <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> (see <strong>Description</strong>) when <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code>, or list of amplitudes and start indices when <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">False</span></code>.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>tuple when <code class="docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code> or two lists, first list [same type as <code class="docutils literal notranslate"><span class="pre">dataValues</span></code>] and second list [int]</p>
+<dd class="field-odd"><p>tuple (<code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code>);  list, list (<code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">False</span></code>)</p>
 </dd>
 </dl>
-<p><strong>Description:</strong>
-With this function a list of (wiggling) data values is analysed to determine all the specifications in terms of its segments. A segment in a wiggling data values line is a section of the line from a local minimum to the next local maximum or a local maximum to the next local minimum. The specifications are returned in terms of a tuple of NumPy arrays and numbers:</p>
+<p><strong>Description</strong>:
+With this function a list of data values is analysed in terms of its <em>segments</em>. A segment is defined as a section from local minimum to the next local maximum or
+local maximum to the next local minimum. 
+The specifications are returned in terms of a tuple of NumPy arrays and numbers (code:<cite>PYtoCPP == True</cite>) with the following
+elements:</p>
 <blockquote>
 <div><div class="line-block">
-<div class="line">[0]  numberOfSegments</div>
-<div class="line">[1]  segmentStartIndices - the start indices of each segment (the local minima and maxima).</div>
-<div class="line">[2]  segmentAmplitudes - the corresponding amplitudes between local extremes in units of ADU.</div>
-<div class="line">[3]  segmentSlopes - the corresponding slopes in units of ADU / time sample.</div>
-<div class="line">[4]  segmentDurations - the number of time samples between local extremes.</div>
-<div class="line">[5]  numberOfSegmentsNegative - subsection of the list above with only the segments from local maxima to the next local minima.</div>
-<div class="line">[6]  segmentStartIndicesNegative [0:numberOfSegmentsNegative]</div>
-<div class="line">[7]  iSteepestNegativeSlopeSegment</div>
-<div class="line">[8]  iSegmentStartIndicesSteepestNegativeSlope</div>
-<div class="line">[9]  numberOfSegmentsPositive - subsection of the list above with only the segments from local minima to the next local maxima.</div>
-<div class="line">[10] segmentStartIndicesPositive [0:numberOfSegmentsPositive]</div>
-<div class="line">[11] iSteepestPositiveSlopeSegment</div>
-<div class="line">[12] iSegmentStartIndicesSteepestPositiveSlope</div>
+<div class="line">[0]  numberOfSegments;</div>
+<div class="line">[1]  segmentStartIndices - the start indices of each segment (the local minima and maxima);</div>
+<div class="line">[2]  segmentAmplitudes - the corresponding amplitudes between local extremes;</div>
+<div class="line">[3]  segmentSlopes - the corresponding slopes;</div>
+<div class="line">[4]  segmentDurations - the number of steps between local extremes;</div>
+<div class="line">[5]  numberOfSegmentsNegative - subsection of the list above with only the segments from local maxima to the next local minima;</div>
+<div class="line">[6]  segmentStartIndicesNegative [ 0 : numberOfSegmentsNegative ];</div>
+<div class="line">[7]  iSteepestNegativeSlopeSegment;</div>
+<div class="line">[8]  iSegmentStartIndicesSteepestNegativeSlope;</div>
+<div class="line">[9]  numberOfSegmentsPositive - subsection of the list above with only the segments from local minima to the next local maxima;</div>
+<div class="line">[10] segmentStartIndicesPositive [ 0 : numberOfSegmentsPositive ];</div>
+<div class="line">[11] iSteepestPositiveSlopeSegment;</div>
+<div class="line">[12] iSegmentStartIndicesSteepestPositiveSlope;</div>
 </div>
 </div></blockquote>
-<p>When calling this function with <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">False</span></code>, only list of segment amplitudes and segment start indices is being returned.</p>
+<p>If <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code>, only lists of segment amplitudes and segment start indices are being returned.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> are converted to 16-bit integers when <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">True</span></code>. 
+If <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span> <span class="pre">=</span> <span class="pre">False</span></code>, then Tte user can choose whether to convert <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> or not by setting the <code class="code docutils literal notranslate"><span class="pre">convertToShort</span></code> boolean.</p>
+</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.passAverageFilter">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">passAverageFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">windowWidth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.passAverageFilter" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">passAverageFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">windowWidth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PYtoCPP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.passAverageFilter" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataValues</strong> (<em>list</em>) – list (one dimension) of data values that represent the signal to be filtered.</p></li>
-<li><p><strong>windowWidth</strong> (<em>int</em>) – width of the window: number of values in the averaging window including the central value. This is always an uneven number.</p></li>
+<li><p><strong>dataValues</strong> (<em>list</em><em> or </em><em>NumPy array</em>) – list of data values that represent the signal to be filtered.</p></li>
+<li><p><strong>windowWidth</strong> (<em>int</em>) – width of the window which will include the central value. This is always an uneven number. If an even number is given, then <code class="code docutils literal notranslate"><span class="pre">windowWidth</span></code> will be increased by one.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>signal <code class="docutils literal notranslate"><span class="pre">dataValues</span></code> filtered with a running average.</p>
+<dd class="field-even"><p>filtered data values.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
-<p><strong>Description:</strong>
-Use this function to perform a running average filtering of a list (one dimension) of data values. The total number of point in the averaging window is <code class="code docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">windowWidth</span> <span class="pre">+</span> <span class="pre">1</span></code>. At the beginning and the end of the list, filtering is done with the available data values. For example, the result for the first data value is the average of the first data value and the <code class="code docutils literal notranslate"><span class="pre">width</span></code> data values to the right.</p>
-<p>The noise level of the filtered set can be easily calculated from the noise level of the original data values, by dividing by the square root of the total number of data values in the averaging window.</p>
+<p><strong>Description</strong>:
+Use this function to perform a simple running average filtering of a list (one dimension) of data values. The total number of point in the averaging window is always
+uneven and is equal to <code class="code docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(</span> <span class="pre">windowWidth</span> <span class="pre">//</span> <span class="pre">2</span> <span class="pre">)</span> <span class="pre">+</span> <span class="pre">1</span></code>. If the user enter an even <code class="code docutils literal notranslate"><span class="pre">windowWidth</span></code>, then it is increased by one.
+At the beginning and the end of the list, filtering is done with the available data values:
+for example, the result for the first filtered value is the average of the first <code class="code docutils literal notranslate"><span class="pre">(</span> <span class="pre">windowWidth</span> <span class="pre">//</span> <span class="pre">2</span> <span class="pre">)</span> <span class="pre">+</span> <span class="pre">1</span></code> data values.</p>
+<p>The noise level of the filtered set can be easily calculated from the noise level of the original data values, by dividing by the square root of the total
+number of data values in the averaging window.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -316,7 +329,7 @@ Determine the values of the variables a and b for the linear least square soluti
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.QQPlot">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">QQPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabelToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input</span> <span class="pre">values'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabelToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'z</span> <span class="pre">(sigma)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">QQTitleToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DataTools</span> <span class="pre">version</span> <span class="pre">20240828:</span> <span class="pre">QQ-plot</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HistTitleToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DataTools</span> <span class="pre">version</span> <span class="pre">20240828:</span> <span class="pre">Histogram</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotTextAverageMedian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savePlots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotBaseFileName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'QQPlot.png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.QQPlot" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">QQPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xInput</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xlabelToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'input</span> <span class="pre">values'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylabelToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'z</span> <span class="pre">(sigma)'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">QQTitleToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DataTools</span> <span class="pre">version</span> <span class="pre">20241119:</span> <span class="pre">QQ-plot</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">HistTitleToPrint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'DataTools</span> <span class="pre">version</span> <span class="pre">20241119:</span> <span class="pre">Histogram</span> <span class="pre">of</span> <span class="pre">input</span> <span class="pre">data'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotTextAverageMedian</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">savePlots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plotBaseFileName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'QQPlot.png'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.QQPlot" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -408,12 +421,13 @@ This function is called by the <a class="reference internal" href="#DataTools.Da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.getAverageVarAndSDPYtoCPP">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getAverageVarAndSDPYtoCPP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">removeNaN</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getAverageVarAndSDPYtoCPP" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getAverageVarAndSDPYtoCPP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">removeNaN</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PYtoCPP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getAverageVarAndSDPYtoCPP" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataValues</strong> (<em>list</em><em> [</em><em>float</em><em>] or </em><em>NumPy array</em><em> (</em><em>one dimension</em><em>)</em>) – list of data values.</p></li>
 <li><p><strong>removeNaN</strong> (<em>bool</em>) – if True then remove any NaN values from the list of data values.</p></li>
+<li><p><strong>PYtoCPP</strong> (<em>boolean</em>) – the user can choose to use Python to analyse the <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> by setting <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span></code> to <code class="code docutils literal notranslate"><span class="pre">False</span></code>,  default = True</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -512,7 +526,7 @@ into the np.random.normal method as the standard deviation of the normal distrib
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Nov 04, 2024, 2:53:42 PM.
+      <span class="lastupdated">Last updated on Nov 19, 2024, 10:05:38 AM.
       </span></p>
   </div>
 
