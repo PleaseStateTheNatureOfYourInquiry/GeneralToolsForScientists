@@ -33,7 +33,7 @@ export PYTHONPATH="/SomeWhereOnYourMachine/GeneralTools/PyQtInformationDialog:$P
 **DataTools** is written in Python and some of the functions have C++ bindings, via Cython. This is a more recent class and needs more updating: for example the filter functions are still rather rudimentary, with only one simpe averaging filter written in C++.
 
 If the compiled C++ files cannot be found, then automatically the Python version of the function will be used. You can also choose to use the Python versions:
-see the API descriptions of the functions at the **DataTools** [documentation page]((https://generaltools-for-scientists.readthedocs.io/en/latest/datatools.html), or locally 
+see the API descriptions of the functions at the **DataTools** [documentation page](https://generaltools-for-scientists.readthedocs.io/en/latest/datatools.html), or locally 
 in the docshtml folder of the repository. 
 
 The Cython and C++ code and the compiled libraries are in the `./PYtoCPP/DataTools` subfolder. The compilation has been done for Python 3.11 (both Mac OS and Windows), which I use on my machine. On Mac, it might be necessary to have XCode installed before you can run it. If you use a different version of Python, then you must compile the two classes **DataWranglingToolsPYtoCPP** and **FilterToolsPYtoCPP** using
