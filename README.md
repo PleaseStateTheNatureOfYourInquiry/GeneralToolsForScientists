@@ -8,7 +8,7 @@ There are currently two different pseudo classes in **GeneralTools**, which are 
 The class **PyQtInformationDialog**  is only useful when developing GUIs with PyQt. Please ignore it if this is not your case.
 
 There is no ```pip install``` option (yet).
-Just clone this repository to a directory of your choice on your computer.
+Please simply clone this repository to a directory of your choice on your computer, or download the zip-file and unpack.
 In order to use these classes, the Python session must know the paths to the directories on your machine.
 Hence you need to tell Python where to look. If you use a Python startup file the following paths need to be appended to the ```sys.path``` variable:
 
@@ -19,7 +19,7 @@ Hence you need to tell Python where to look. If you use a Python startup file th
   sys.path.append ('/SomeWhereOnYourMachine/GeneralTools/PyQtInformationDialog')
   ```
 
-If you run Python straight from the command line, then on a Mac you need to add the following lines to .zprofile (or .bashrc or similar):
+If you run Python straight from the command line, and if you are on a Mac, then you need to add the following lines to the .zprofile (or .bashrc or similar) file:
 
 ```
 export PYTHONPATH="/SomeWhereOnYourMachine/GeneralTools/DataTools:$PYTHONPATH"
@@ -28,11 +28,11 @@ export PYTHONPATH="/SomeWhereOnYourMachine/GeneralTools/HandyTools:$PYTHONPATH"
 export PYTHONPATH="/SomeWhereOnYourMachine/GeneralTools/PyQtInformationDialog:$PYTHONPATH"
 ```
 
-**HandyTools** is written in Python only. It is a collection of small functions, that are ... well **handy** (at least they are for me). I developed them over the years, while working on different projects. This set is pretty stable and I do not make many updates or changes to it. 
+**HandyTools** is written in Python only. It is a collection of small functions, that are ...  **handy** (at least they are for me). I developed them over the years, while working on different projects. This set is pretty stable and I do not make many updates or changes to it. 
 
-**DataTools** is written in Python and some of the functions have C++ bindings, via Cython. This is a more recent class and needs more updating: for example the filter functions are still rather rudimentary, with only one simpe averaging filter written in C++.
+**DataTools** is written in Python and some of the functions have C++ bindings, via Cython. This is a more recent class and needs more work, but is in a useful state (I think): for example the filter functions are still rather rudimentary, with only one simpe averaging filter written in C++.
 
-If the compiled C++ files cannot be found, then automatically the Python version of the function will be used. You can also choose to use the Python versions:
+If the compiled C++ files cannot be found, then automatically a Python version of the function will be used. When calling such a function, you can choose to use the Python versions:
 see the API descriptions of the functions at the **DataTools** [documentation page](https://generaltools-for-scientists.readthedocs.io/en/latest/datatools.html), or locally 
 in the docshtml folder of the repository. 
 
