@@ -1099,3 +1099,49 @@ class DataTools:
             
         return  np.asarray (dataValuesWithGaussianNoise)
 
+
+    #
+    @staticmethod
+    def getNearestValue (dataValues, valueToCompare, monotonicList = 1, PYtoCPP = True):
+        '''
+        :param dataValues: list of monotonically increasing or decreasing data values.
+        :type dataValues: list [float] or NumPy array (one dimension)
+
+        :param valueToCompare: value to compare the values in :code:`dataValues` with.
+        :type valueToCompare: float or double
+
+        :param monotonicList: :code:`1` (default) when the values in the list are strictly monotonically increasing or decreasing, :code:`0` when not.
+        :type monotonicList: int
+
+        :param PYtoCPP: the user can choose to use Python to analyse the :code:`dataValues` by setting :code:`PYtoCPP` to :code:`False`,  default = True
+        :type PYtoCPP: boolean
+
+
+        **Description**:
+        Compare the :code:`valueToCompare` with all the values in the :code:`dataValues` list (or array) and return index and value of the smallest difference
+        in absolute terms. The difference is returned in relative terms, a negative difference means that the closest value in :code:`dataValues` is smaller
+        than the :code:`valueToCompare`. 
+        The user must indicate whether the values in the list are strictly monotonically in(de)creasing or not.
+        
+        '''
+
+        if len (dataValues):
+
+            if PYtoCPP and DataWranglingToolsPYtoCPPExists:
+            
+                iNearestValue, smallestDifference = DataWranglingToolsPYtoCPP.getNearestValuePYtoCPP (dataValues, valueToCompare, monotonicList)
+
+
+            elif not PYtoCPP or not DataWranglingToolsPYtoCPPExists:
+
+                iNearestValue = np.argmin ( np.abs ( np.asarray (dataValues) - valueToCompare ) )
+                smallestDifference = dataValues [iNearestValue] - valueToCompare              
+            
+        
+            return iNearestValue, smallestDifference
+            
+        else:
+        
+            return np.nan, np.nan
+
+

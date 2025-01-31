@@ -15,40 +15,51 @@ cdef extern from "DataWranglingToolsCPPCore.h":
         DataWranglingToolsCPPCore () except+
     
         void getSegmentSpecsFromDataValues ( 
-            short int *, #1
-            unsigned int, #2
-            unsigned int *, #3
-            unsigned int&, #4
-            int *, #5
-            float *, #6
-            unsigned int *, #7
-            unsigned int *, #8
-            unsigned int&, #9
-            unsigned int&, #10
-            unsigned int&, #11
-            unsigned int *, #12
-            unsigned int&, #13
-            unsigned int&, #14
-            unsigned int& #15
+            short int *, #1 short dataValues [1]
+            unsigned int, #2 unsigned int numberOfDataValues
+            unsigned int *, #3 unsigned int segmentStartIndices [1]
+            unsigned int&, #4 unsigned int& numberOfSegments
+            int *, #5 int segmentAmplitudes [1]
+            float *, #6 float segmentSlopes [1]
+            unsigned int *, #7 unsigned int segmentDurations [1]
+            unsigned int *, #8 unsigned int segmentStartIndicesNegative [1]
+            unsigned int&, #9 unsigned int& numberOfSegmentsNegative
+            unsigned int&, #10 unsigned int& iSteepestNegativeSlopeSegment
+            unsigned int&, #11 unsigned int& iSegmentStartIndicesSteepestNegativeSlope
+            unsigned int *, #12 unsigned int segmentStartIndicesPositive [1]
+            unsigned int&, #13 unsigned int& numberOfSegmentsPositive
+            unsigned int&, #14 unsigned int& iSteepestPositiveSlopeSegment
+            unsigned int& #15 unsigned int& iSegmentStartIndicesSteepestPositiveSlope
         )
 
         void getAverageVarAndSD (
-            double *, #1
-            int, #2
-            double&, #3
-            double&, #4
-            double& #5
+            double *, #1 double dataValues [1]
+            int, #2 int numberOfValues
+            double&, #3 double& averageValue
+            double&, #4 double& standardDeviation
+            double& #5 double& variance
         )
 
 
         void getMedianAndQuantiles (
-            double *, #1
-            int, #2
-            double&, #3
-            float, #4
-            double&, #5
-            float, #6
-            double& #7
+            double *, #1 double dataValues [1]
+            int, #2 int numberOfValues
+            double&, #3 double& medianValue
+            float, #4 float lowerQuantile
+            double&, #5 double& lowerQuantileValue
+            float, #6 float upperQuantile
+            double& #7 double& upperQuantileValue
+        )
+
+
+        void getNearestValue (
+            double *, #1 float dataValues [1]
+            unsigned int, #2 unsigned int numberOfValues
+            double, #3 float valueToCompare
+            int&, #4 unsigned int& iSmallestDifference
+            double&, #5 float& smallestDifference
+            int #6 int monotonicList
+            
         )
 
 
@@ -290,5 +301,47 @@ def getMedianAndQuantilesPYtoCPP (
 
 
 
+def getNearestValuePYtoCPP (
+    dataValues,
+    valueToCompare,
+    monotonicList = 1 ):
+    '''
 
-           
+    dataValues: 
+    
+        converted to a double
+
+
+    '''
+
+    global DataWranglingToolsCPPCoreObject
+
+    cdef int iSmallestDifference = 0
+    cdef double smallestDifference = 0
+
+
+    # Make sure the dataValues list is a NumPy array.
+    if type (dataValues) == list:
+    
+        dataValues = np.asarray (dataValues, dtype = np.double)
+
+    else:
+    
+        dataValues = np.ascontiguousarray (dataValues, dtype = np.double)       
+    
+    
+    cdef Py_ssize_t numberOfValues = dataValues.shape [0]
+    cdef double [::1] dataValues_view = dataValues
+        
+      
+    DataWranglingToolsCPPCoreObject.getNearestValue (
+        &dataValues_view [0], #1
+        numberOfValues, #2
+        valueToCompare, #3
+        iSmallestDifference, #4
+        smallestDifference, #5
+        monotonicList #6
+    )
+
+
+    return iSmallestDifference, smallestDifference

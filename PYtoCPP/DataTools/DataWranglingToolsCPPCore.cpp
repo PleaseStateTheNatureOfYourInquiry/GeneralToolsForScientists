@@ -261,6 +261,78 @@ void DataWranglingToolsCPPCore::getMedianAndQuantiles (
 }
 
 
+void DataWranglingToolsCPPCore::getNearestValue (
+    double dataValues [1],
+    unsigned int numberOfValues,
+    double valueToCompare,
+    int& iSmallestDifference,
+    double& smallestDifference,
+    int monotonicList
+)
+{
+
+    // Start at the beginning of the list of annotation markers on the electrode that needs to be compared to the valueToCompare.
+    int iDAT = 0;
+    iSmallestDifference = 0;
+    double smallestDifferenceABS = abs (dataValues [iDAT] - valueToCompare);
+    double valueDifferenceABS = 0;
+        
+    // If the list of dataValues is strictly monotonic, then the search can be stopped once the smallest difference has been found.
+    if ( monotonicList )
+    {
+
+        iDAT++;
+        valueDifferenceABS = abs (dataValues [iDAT] - valueToCompare);
+
+        // The list of values to compare has to be monotonically increasing, then as soon as the closest value has been found, stop the search.
+        while ( iDAT < numberOfValues && valueDifferenceABS < smallestDifferenceABS )
+        {
+    
+    
+              // A new smallest value difference has been found.
+              smallestDifferenceABS = valueDifferenceABS;
+              iSmallestDifference = iDAT;
+              
+              // Go to the next value in the list.
+              iDAT++;
+    
+              // Calculate the next difference if possible.          
+              if ( iDAT < numberOfValues )
+                  
+                  valueDifferenceABS = abs (dataValues [iDAT] - valueToCompare);
+    
+        }
+        
+    }
+
+    // If the list of dataValues is not strictly monotonic, then the search needs to be done on all elements.
+    else 
+    {
+    
+        // The list of values to compare has to be monotonically increasing, then as soon as the closest value has been found, stop the search.
+        for ( iDAT = 1; iDAT < numberOfValues; iDAT++ )
+        {
+    
+              valueDifferenceABS = abs (dataValues [iDAT] - valueToCompare);
+              
+              // A new smallest value difference has been found.
+              if ( valueDifferenceABS < smallestDifferenceABS )
+              {                                
+
+                  smallestDifferenceABS = valueDifferenceABS;
+                  iSmallestDifference = iDAT;
+
+              }    
+        }
+    
+    };
+    
+    // Calculate the smallest difference in relative terms: a negative value means that the nearest value in the list is smaller than the value to compare.    
+    smallestDifference = dataValues [iSmallestDifference] - valueToCompare;
+
+}
+
+
 double DataWranglingToolsCPPCore::getQuantileValue (
     std::vector <double> dataValuesSorted,
     int numberOfValues,
@@ -282,4 +354,6 @@ double DataWranglingToolsCPPCore::getQuantileValue (
 
 
 }
+
+
 

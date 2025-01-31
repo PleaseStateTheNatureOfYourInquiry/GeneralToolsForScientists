@@ -18,7 +18,7 @@ DataTools
 | :py:meth:`~.getMedianAndQuantilesPYtoCPP`
 | :py:meth:`~.getNanFreeNumpyArray`
 | :py:meth:`~.getDataValuesWithGaussianNoise`
-
+| :py:meth:`~.getNearestValue`
 
 
 
@@ -63,4 +63,9 @@ DataTools
 
 
 .. automethod:: DataTools.DataTools.getDataValuesWithGaussianNoise
+
+
+.. automethod:: DataTools.DataTools.getNearestValue
+
+
 

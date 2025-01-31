@@ -47,6 +47,17 @@ class DataWranglingToolsCPPCore {
             double& upperQuantileValue //7
         );
 
+
+        void getNearestValue (
+            double dataValues [1], //1
+            unsigned int numberOfValues, //2
+            double valueToCompare, //3
+            int& iSmallestDifference, //4
+            double& smallestDifference, //5   
+            int monotonicList //6      
+        );
+
+
         
     private:
 
