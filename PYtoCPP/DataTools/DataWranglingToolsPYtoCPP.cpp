@@ -17696,7 +17696,7 @@ static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *__
   return __pyx_r;
 }
 
-/* "DataWranglingToolsPYtoCPP.pyx":69
+/* "DataWranglingToolsPYtoCPP.pyx":70
  * 
  * 
  * def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
@@ -17738,7 +17738,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
   #else
   __pyx_nargs = PyTuple_Size(__pyx_args);
-  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 69, __pyx_L3_error)
+  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 70, __pyx_L3_error)
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
@@ -17759,12 +17759,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 69, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 70, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getSegmentSpecsFromDataValuesPYtoCPP") < 0)) __PYX_ERR(1, 69, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getSegmentSpecsFromDataValuesPYtoCPP") < 0)) __PYX_ERR(1, 70, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -17775,7 +17775,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getSegmentSpecsFromDataValuesPYtoCPP", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 69, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getSegmentSpecsFromDataValuesPYtoCPP", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 70, __pyx_L3_error)
   goto __pyx_L3_error;
   __pyx_L3_error:;
   {
@@ -17860,56 +17860,56 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   __Pyx_RefNannySetupContext("getSegmentSpecsFromDataValuesPYtoCPP", 0);
   __Pyx_INCREF(__pyx_v_dataValues);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":98
+  /* "DataWranglingToolsPYtoCPP.pyx":99
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list or dataValues.dtype != 'int16':             # <<<<<<<<<<<<<<
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.short)
  */
-  __pyx_t_2 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 98, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 98, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 99, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (!__pyx_t_3) {
   } else {
     __pyx_t_1 = __pyx_t_3;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 98, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_int16, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 98, __pyx_L1_error)
+  __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_int16, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
-    /* "DataWranglingToolsPYtoCPP.pyx":100
+    /* "DataWranglingToolsPYtoCPP.pyx":101
  *     if type (dataValues) == list or dataValues.dtype != 'int16':
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.short)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_asarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_dataValues)) __PYX_ERR(1, 100, __pyx_L1_error);
-    __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 100, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_dataValues)) __PYX_ERR(1, 101, __pyx_L1_error);
+    __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_short); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_short); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(1, 100, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 100, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17917,7 +17917,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __Pyx_DECREF_SET(__pyx_v_dataValues, __pyx_t_7);
     __pyx_t_7 = 0;
 
-    /* "DataWranglingToolsPYtoCPP.pyx":98
+    /* "DataWranglingToolsPYtoCPP.pyx":99
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list or dataValues.dtype != 'int16':             # <<<<<<<<<<<<<<
@@ -17926,33 +17926,33 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":104
+  /* "DataWranglingToolsPYtoCPP.pyx":105
  * 
  *     # Make sure the array is stored contiguously.
  *     if not dataValues.flags ['C_CONTIGUOUS']:             # <<<<<<<<<<<<<<
  * 
  *         dataValues = np.ascontiguousarray (dataValues)
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 104, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_flags); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_t_7, __pyx_n_u_C_CONTIGUOUS); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 104, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Dict_GetItem(__pyx_t_7, __pyx_n_u_C_CONTIGUOUS); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 105, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(1, 104, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_1 < 0))) __PYX_ERR(1, 105, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_3 = (!__pyx_t_1);
   if (__pyx_t_3) {
 
-    /* "DataWranglingToolsPYtoCPP.pyx":106
+    /* "DataWranglingToolsPYtoCPP.pyx":107
  *     if not dataValues.flags ['C_CONTIGUOUS']:
  * 
  *         dataValues = np.ascontiguousarray (dataValues)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 106, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 106, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -17973,14 +17973,14 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
       PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_v_dataValues};
       __pyx_t_5 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 106, __pyx_L1_error)
+      if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 107, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
     __Pyx_DECREF_SET(__pyx_v_dataValues, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "DataWranglingToolsPYtoCPP.pyx":104
+    /* "DataWranglingToolsPYtoCPP.pyx":105
  * 
  *     # Make sure the array is stored contiguously.
  *     if not dataValues.flags ['C_CONTIGUOUS']:             # <<<<<<<<<<<<<<
@@ -17989,35 +17989,35 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":109
+  /* "DataWranglingToolsPYtoCPP.pyx":110
  * 
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]             # <<<<<<<<<<<<<<
  *     cdef short int [::1] dataValues_view = dataValues
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 109, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 109, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_9 = __Pyx_PyIndex_AsSsize_t(__pyx_t_2); if (unlikely((__pyx_t_9 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 109, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyIndex_AsSsize_t(__pyx_t_2); if (unlikely((__pyx_t_9 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 110, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_numberOfDataValues = __pyx_t_9;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":110
+  /* "DataWranglingToolsPYtoCPP.pyx":111
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]
  *     cdef short int [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_short(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 110, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_short(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 111, __pyx_L1_error)
   __pyx_v_dataValues_view = __pyx_t_10;
   __pyx_t_10.memview = NULL;
   __pyx_t_10.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":113
+  /* "DataWranglingToolsPYtoCPP.pyx":114
  * 
  * 
  *     cdef unsigned int numberOfSegments = 0             # <<<<<<<<<<<<<<
@@ -18026,7 +18026,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_numberOfSegments = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":114
+  /* "DataWranglingToolsPYtoCPP.pyx":115
  * 
  *     cdef unsigned int numberOfSegments = 0
  *     cdef unsigned int numberOfSegmentsNegative = 0             # <<<<<<<<<<<<<<
@@ -18035,7 +18035,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_numberOfSegmentsNegative = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":115
+  /* "DataWranglingToolsPYtoCPP.pyx":116
  *     cdef unsigned int numberOfSegments = 0
  *     cdef unsigned int numberOfSegmentsNegative = 0
  *     cdef unsigned int numberOfSegmentsPositive = 0             # <<<<<<<<<<<<<<
@@ -18044,7 +18044,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_numberOfSegmentsPositive = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":116
+  /* "DataWranglingToolsPYtoCPP.pyx":117
  *     cdef unsigned int numberOfSegmentsNegative = 0
  *     cdef unsigned int numberOfSegmentsPositive = 0
  *     cdef unsigned int iSteepestNegativeSlopeSegment = 0             # <<<<<<<<<<<<<<
@@ -18053,7 +18053,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_iSteepestNegativeSlopeSegment = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":117
+  /* "DataWranglingToolsPYtoCPP.pyx":118
  *     cdef unsigned int numberOfSegmentsPositive = 0
  *     cdef unsigned int iSteepestNegativeSlopeSegment = 0
  *     cdef unsigned int iSegmentStartIndicesSteepestNegativeSlope = 0             # <<<<<<<<<<<<<<
@@ -18062,7 +18062,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_iSegmentStartIndicesSteepestNegativeSlope = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":118
+  /* "DataWranglingToolsPYtoCPP.pyx":119
  *     cdef unsigned int iSteepestNegativeSlopeSegment = 0
  *     cdef unsigned int iSegmentStartIndicesSteepestNegativeSlope = 0
  *     cdef unsigned int iSteepestPositiveSlopeSegment = 0             # <<<<<<<<<<<<<<
@@ -18071,7 +18071,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_iSteepestPositiveSlopeSegment = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":119
+  /* "DataWranglingToolsPYtoCPP.pyx":120
  *     cdef unsigned int iSegmentStartIndicesSteepestNegativeSlope = 0
  *     cdef unsigned int iSteepestPositiveSlopeSegment = 0
  *     cdef unsigned int iSegmentStartIndicesSteepestPositiveSlope = 0             # <<<<<<<<<<<<<<
@@ -18080,40 +18080,40 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_iSegmentStartIndicesSteepestPositiveSlope = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":127
+  /* "DataWranglingToolsPYtoCPP.pyx":128
  *     #  This is because the amplitudes are differences in the dataValues, which are of type short (-32768 - +32767),
  *     #  hence the maximum difference can be + or -65535 !!!
  *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.int32) )             # <<<<<<<<<<<<<<
  *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5)) __PYX_ERR(1, 127, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error);
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_int32); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_int32); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_12) < 0) __PYX_ERR(1, 127, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_12) < 0) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 127, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18137,59 +18137,59 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 127, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 128, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __pyx_v_segmentAmplitudes = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":128
+  /* "DataWranglingToolsPYtoCPP.pyx":129
  *     #  hence the maximum difference can be + or -65535 !!!
  *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.int32) )
  *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes             # <<<<<<<<<<<<<<
  * 
  *     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
  */
-  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_int(__pyx_v_segmentAmplitudes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 128, __pyx_L1_error)
+  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_int(__pyx_v_segmentAmplitudes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 129, __pyx_L1_error)
   __pyx_v_segmentAmplitudes_view = __pyx_t_13;
   __pyx_t_13.memview = NULL;
   __pyx_t_13.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":130
+  /* "DataWranglingToolsPYtoCPP.pyx":131
  *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes
  * 
  *     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )             # <<<<<<<<<<<<<<
  *     cdef float [::1] segmentSlopes_view = segmentSlopes
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_7 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7)) __PYX_ERR(1, 130, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_7)) __PYX_ERR(1, 131, __pyx_L1_error);
   __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_single); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_single); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_dtype, __pyx_t_11) < 0) __PYX_ERR(1, 130, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_dtype, __pyx_t_11) < 0) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 130, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_6, __pyx_t_7); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18213,59 +18213,59 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_12, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 130, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   }
   __pyx_v_segmentSlopes = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":131
+  /* "DataWranglingToolsPYtoCPP.pyx":132
  * 
  *     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
  *     cdef float [::1] segmentSlopes_view = segmentSlopes             # <<<<<<<<<<<<<<
  * 
  *     segmentDurations = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc) )
  */
-  __pyx_t_14 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_segmentSlopes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_14.memview)) __PYX_ERR(1, 131, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_segmentSlopes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_14.memview)) __PYX_ERR(1, 132, __pyx_L1_error)
   __pyx_v_segmentSlopes_view = __pyx_t_14;
   __pyx_t_14.memview = NULL;
   __pyx_t_14.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":133
+  /* "DataWranglingToolsPYtoCPP.pyx":134
  *     cdef float [::1] segmentSlopes_view = segmentSlopes
  * 
  *     segmentDurations = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc) )             # <<<<<<<<<<<<<<
  *     cdef unsigned int [::1] segmentDurations_view = segmentDurations
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_zeros); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  __pyx_t_12 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_12 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_12);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_12)) __PYX_ERR(1, 133, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_12)) __PYX_ERR(1, 134, __pyx_L1_error);
   __pyx_t_12 = 0;
-  __pyx_t_12 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_uintc); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_uintc); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_12, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 133, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_12, __pyx_n_s_dtype, __pyx_t_4) < 0) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, __pyx_t_12); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 133, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_6, __pyx_t_12); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18289,59 +18289,59 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_11, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 133, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 134, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   }
   __pyx_v_segmentDurations = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":134
+  /* "DataWranglingToolsPYtoCPP.pyx":135
  * 
  *     segmentDurations = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc) )
  *     cdef unsigned int [::1] segmentDurations_view = segmentDurations             # <<<<<<<<<<<<<<
  * 
  *     segmentStartIndices = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentDurations, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 134, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentDurations, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 135, __pyx_L1_error)
   __pyx_v_segmentDurations_view = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":136
+  /* "DataWranglingToolsPYtoCPP.pyx":137
  *     cdef unsigned int [::1] segmentDurations_view = segmentDurations
  * 
  *     segmentStartIndices = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )             # <<<<<<<<<<<<<<
  *     cdef unsigned int [::1] segmentStartIndices_view = segmentStartIndices
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_zeros); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_zeros); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  __pyx_t_11 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_11 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_11);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_11)) __PYX_ERR(1, 136, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_11)) __PYX_ERR(1, 137, __pyx_L1_error);
   __pyx_t_11 = 0;
-  __pyx_t_11 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_uintc); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_uintc); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (PyDict_SetItem(__pyx_t_11, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 136, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_11, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_6, __pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 136, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_12, __pyx_t_6, __pyx_t_11); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18365,59 +18365,59 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 136, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __pyx_v_segmentStartIndices = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":137
+  /* "DataWranglingToolsPYtoCPP.pyx":138
  * 
  *     segmentStartIndices = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  *     cdef unsigned int [::1] segmentStartIndices_view = segmentStartIndices             # <<<<<<<<<<<<<<
  * 
  *     segmentStartIndicesNegative = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndices, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 137, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndices, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 138, __pyx_L1_error)
   __pyx_v_segmentStartIndices_view = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":139
+  /* "DataWranglingToolsPYtoCPP.pyx":140
  *     cdef unsigned int [::1] segmentStartIndices_view = segmentStartIndices
  * 
  *     segmentStartIndicesNegative = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )             # <<<<<<<<<<<<<<
  *     cdef unsigned int [::1] segmentStartIndicesNegative_view = segmentStartIndicesNegative
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_4 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4)) __PYX_ERR(1, 139, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4)) __PYX_ERR(1, 140, __pyx_L1_error);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_12, __pyx_n_s_np); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_uintc); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_12, __pyx_n_s_uintc); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(1, 139, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_6, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 139, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_11, __pyx_t_6, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 140, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18441,59 +18441,59 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 139, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __pyx_v_segmentStartIndicesNegative = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":140
+  /* "DataWranglingToolsPYtoCPP.pyx":141
  * 
  *     segmentStartIndicesNegative = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  *     cdef unsigned int [::1] segmentStartIndicesNegative_view = segmentStartIndicesNegative             # <<<<<<<<<<<<<<
  * 
  *     segmentStartIndicesPositive = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesNegative, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 140, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesNegative, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 141, __pyx_L1_error)
   __pyx_v_segmentStartIndicesNegative_view = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":142
+  /* "DataWranglingToolsPYtoCPP.pyx":143
  *     cdef unsigned int [::1] segmentStartIndicesNegative_view = segmentStartIndicesNegative
  * 
  *     segmentStartIndicesPositive = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )             # <<<<<<<<<<<<<<
  *     cdef unsigned int [::1] segmentStartIndicesPositive_view = segmentStartIndicesPositive
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_5 = PyInt_FromSsize_t(__pyx_v_numberOfDataValues); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5)) __PYX_ERR(1, 142, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5)) __PYX_ERR(1, 143, __pyx_L1_error);
   __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_uintc); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_uintc); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_12) < 0) __PYX_ERR(1, 142, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_12) < 0) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-  __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 142, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_5); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 143, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -18517,26 +18517,26 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_7, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_12); __pyx_t_12 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 142, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 143, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __pyx_v_segmentStartIndicesPositive = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":143
+  /* "DataWranglingToolsPYtoCPP.pyx":144
  * 
  *     segmentStartIndicesPositive = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  *     cdef unsigned int [::1] segmentStartIndicesPositive_view = segmentStartIndicesPositive             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesPositive, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 143, __pyx_L1_error)
+  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesPositive, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 144, __pyx_L1_error)
   __pyx_v_segmentStartIndicesPositive_view = __pyx_t_15;
   __pyx_t_15.memview = NULL;
   __pyx_t_15.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":148
+  /* "DataWranglingToolsPYtoCPP.pyx":149
  *     # Call the C++ core function.
  *     DataWranglingToolsCPPCoreObject.getSegmentSpecsFromDataValues (
  *         &dataValues_view [0], #1             # <<<<<<<<<<<<<<
@@ -18551,10 +18551,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_16 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 148, __pyx_L1_error)
+    __PYX_ERR(1, 149, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":150
+  /* "DataWranglingToolsPYtoCPP.pyx":151
  *         &dataValues_view [0], #1
  *         numberOfDataValues, #2
  *         &segmentStartIndices_view [0], #3             # <<<<<<<<<<<<<<
@@ -18569,10 +18569,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_17 >= __pyx_v_segmentStartIndices_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 150, __pyx_L1_error)
+    __PYX_ERR(1, 151, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":152
+  /* "DataWranglingToolsPYtoCPP.pyx":153
  *         &segmentStartIndices_view [0], #3
  *         numberOfSegments, #4
  *         &segmentAmplitudes_view [0], #5             # <<<<<<<<<<<<<<
@@ -18587,10 +18587,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_18 >= __pyx_v_segmentAmplitudes_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 152, __pyx_L1_error)
+    __PYX_ERR(1, 153, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":153
+  /* "DataWranglingToolsPYtoCPP.pyx":154
  *         numberOfSegments, #4
  *         &segmentAmplitudes_view [0], #5
  *         &segmentSlopes_view [0], #6             # <<<<<<<<<<<<<<
@@ -18605,10 +18605,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_19 >= __pyx_v_segmentSlopes_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 153, __pyx_L1_error)
+    __PYX_ERR(1, 154, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":154
+  /* "DataWranglingToolsPYtoCPP.pyx":155
  *         &segmentAmplitudes_view [0], #5
  *         &segmentSlopes_view [0], #6
  *         &segmentDurations_view [0], #7             # <<<<<<<<<<<<<<
@@ -18623,10 +18623,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_20 >= __pyx_v_segmentDurations_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 154, __pyx_L1_error)
+    __PYX_ERR(1, 155, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":155
+  /* "DataWranglingToolsPYtoCPP.pyx":156
  *         &segmentSlopes_view [0], #6
  *         &segmentDurations_view [0], #7
  *         &segmentStartIndicesNegative_view [0], #8             # <<<<<<<<<<<<<<
@@ -18641,10 +18641,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_21 >= __pyx_v_segmentStartIndicesNegative_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 155, __pyx_L1_error)
+    __PYX_ERR(1, 156, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":159
+  /* "DataWranglingToolsPYtoCPP.pyx":160
  *         iSteepestNegativeSlopeSegment, #10
  *         iSegmentStartIndicesSteepestNegativeSlope, #11
  *         &segmentStartIndicesPositive_view [0], #12             # <<<<<<<<<<<<<<
@@ -18659,10 +18659,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   } else if (unlikely(__pyx_t_22 >= __pyx_v_segmentStartIndicesPositive_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
-    __PYX_ERR(1, 159, __pyx_L1_error)
+    __PYX_ERR(1, 160, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":147
+  /* "DataWranglingToolsPYtoCPP.pyx":148
  * 
  *     # Call the C++ core function.
  *     DataWranglingToolsCPPCoreObject.getSegmentSpecsFromDataValues (             # <<<<<<<<<<<<<<
@@ -18671,7 +18671,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  */
   __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getSegmentSpecsFromDataValues((&(*((short *) ( /* dim=0 */ ((char *) (((short *) __pyx_v_dataValues_view.data) + __pyx_t_16)) )))), __pyx_v_numberOfDataValues, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndices_view.data) + __pyx_t_17)) )))), __pyx_v_numberOfSegments, (&(*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_segmentAmplitudes_view.data) + __pyx_t_18)) )))), (&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_segmentSlopes_view.data) + __pyx_t_19)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentDurations_view.data) + __pyx_t_20)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesNegative_view.data) + __pyx_t_21)) )))), __pyx_v_numberOfSegmentsNegative, __pyx_v_iSteepestNegativeSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestNegativeSlope, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesPositive_view.data) + __pyx_t_22)) )))), __pyx_v_numberOfSegmentsPositive, __pyx_v_iSteepestPositiveSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestPositiveSlope);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":166
+  /* "DataWranglingToolsPYtoCPP.pyx":167
  * 
  * 
  *     return numberOfSegments, \             # <<<<<<<<<<<<<<
@@ -18679,164 +18679,164 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            segmentAmplitudes [0:numberOfSegments], \
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 166, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":167
+  /* "DataWranglingToolsPYtoCPP.pyx":168
  * 
  *     return numberOfSegments, \
  *            segmentStartIndices [0:numberOfSegments], \             # <<<<<<<<<<<<<<
  *            segmentAmplitudes [0:numberOfSegments], \
  *            segmentSlopes [0:numberOfSegments], \
  */
-  __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndices, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 167, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndices, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":168
+  /* "DataWranglingToolsPYtoCPP.pyx":169
  *     return numberOfSegments, \
  *            segmentStartIndices [0:numberOfSegments], \
  *            segmentAmplitudes [0:numberOfSegments], \             # <<<<<<<<<<<<<<
  *            segmentSlopes [0:numberOfSegments], \
  *            segmentDurations [0:numberOfSegments], \
  */
-  __pyx_t_12 = __Pyx_PyObject_GetSlice(__pyx_v_segmentAmplitudes, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 168, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetSlice(__pyx_v_segmentAmplitudes, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":169
+  /* "DataWranglingToolsPYtoCPP.pyx":170
  *            segmentStartIndices [0:numberOfSegments], \
  *            segmentAmplitudes [0:numberOfSegments], \
  *            segmentSlopes [0:numberOfSegments], \             # <<<<<<<<<<<<<<
  *            segmentDurations [0:numberOfSegments], \
  *            numberOfSegmentsNegative, \
  */
-  __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_segmentSlopes, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 169, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_v_segmentSlopes, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 170, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":170
+  /* "DataWranglingToolsPYtoCPP.pyx":171
  *            segmentAmplitudes [0:numberOfSegments], \
  *            segmentSlopes [0:numberOfSegments], \
  *            segmentDurations [0:numberOfSegments], \             # <<<<<<<<<<<<<<
  *            numberOfSegmentsNegative, \
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \
  */
-  __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_segmentDurations, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 170, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetSlice(__pyx_v_segmentDurations, 0, __pyx_v_numberOfSegments, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":171
+  /* "DataWranglingToolsPYtoCPP.pyx":172
  *            segmentSlopes [0:numberOfSegments], \
  *            segmentDurations [0:numberOfSegments], \
  *            numberOfSegmentsNegative, \             # <<<<<<<<<<<<<<
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \
  *            iSteepestNegativeSlopeSegment, \
  */
-  __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsNegative); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 171, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsNegative); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 172, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":172
+  /* "DataWranglingToolsPYtoCPP.pyx":173
  *            segmentDurations [0:numberOfSegments], \
  *            numberOfSegmentsNegative, \
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \             # <<<<<<<<<<<<<<
  *            iSteepestNegativeSlopeSegment, \
  *            iSegmentStartIndicesSteepestNegativeSlope, \
  */
-  __pyx_t_11 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesNegative, 0, __pyx_v_numberOfSegmentsNegative, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 172, __pyx_L1_error)
+  __pyx_t_11 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesNegative, 0, __pyx_v_numberOfSegmentsNegative, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 173, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":173
+  /* "DataWranglingToolsPYtoCPP.pyx":174
  *            numberOfSegmentsNegative, \
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \
  *            iSteepestNegativeSlopeSegment, \             # <<<<<<<<<<<<<<
  *            iSegmentStartIndicesSteepestNegativeSlope, \
  *            numberOfSegmentsPositive, \
  */
-  __pyx_t_23 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestNegativeSlopeSegment); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 173, __pyx_L1_error)
+  __pyx_t_23 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestNegativeSlopeSegment); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 174, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_23);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":174
+  /* "DataWranglingToolsPYtoCPP.pyx":175
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \
  *            iSteepestNegativeSlopeSegment, \
  *            iSegmentStartIndicesSteepestNegativeSlope, \             # <<<<<<<<<<<<<<
  *            numberOfSegmentsPositive, \
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  */
-  __pyx_t_24 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestNegativeSlope); if (unlikely(!__pyx_t_24)) __PYX_ERR(1, 174, __pyx_L1_error)
+  __pyx_t_24 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestNegativeSlope); if (unlikely(!__pyx_t_24)) __PYX_ERR(1, 175, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_24);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":175
+  /* "DataWranglingToolsPYtoCPP.pyx":176
  *            iSteepestNegativeSlopeSegment, \
  *            iSegmentStartIndicesSteepestNegativeSlope, \
  *            numberOfSegmentsPositive, \             # <<<<<<<<<<<<<<
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  *            iSteepestPositiveSlopeSegment, \
  */
-  __pyx_t_25 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsPositive); if (unlikely(!__pyx_t_25)) __PYX_ERR(1, 175, __pyx_L1_error)
+  __pyx_t_25 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsPositive); if (unlikely(!__pyx_t_25)) __PYX_ERR(1, 176, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_25);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":176
+  /* "DataWranglingToolsPYtoCPP.pyx":177
  *            iSegmentStartIndicesSteepestNegativeSlope, \
  *            numberOfSegmentsPositive, \
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \             # <<<<<<<<<<<<<<
  *            iSteepestPositiveSlopeSegment, \
  *            iSegmentStartIndicesSteepestPositiveSlope
  */
-  __pyx_t_26 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesPositive, 0, __pyx_v_numberOfSegmentsPositive, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __pyx_t_26 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesPositive, 0, __pyx_v_numberOfSegmentsPositive, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 177, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_26);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":177
+  /* "DataWranglingToolsPYtoCPP.pyx":178
  *            numberOfSegmentsPositive, \
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  *            iSteepestPositiveSlopeSegment, \             # <<<<<<<<<<<<<<
  *            iSegmentStartIndicesSteepestPositiveSlope
  * 
  */
-  __pyx_t_27 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestPositiveSlopeSegment); if (unlikely(!__pyx_t_27)) __PYX_ERR(1, 177, __pyx_L1_error)
+  __pyx_t_27 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestPositiveSlopeSegment); if (unlikely(!__pyx_t_27)) __PYX_ERR(1, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_27);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":178
+  /* "DataWranglingToolsPYtoCPP.pyx":179
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  *            iSteepestPositiveSlopeSegment, \
  *            iSegmentStartIndicesSteepestPositiveSlope             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_28 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestPositiveSlope); if (unlikely(!__pyx_t_28)) __PYX_ERR(1, 178, __pyx_L1_error)
+  __pyx_t_28 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestPositiveSlope); if (unlikely(!__pyx_t_28)) __PYX_ERR(1, 179, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_28);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":166
+  /* "DataWranglingToolsPYtoCPP.pyx":167
  * 
  * 
  *     return numberOfSegments, \             # <<<<<<<<<<<<<<
  *            segmentStartIndices [0:numberOfSegments], \
  *            segmentAmplitudes [0:numberOfSegments], \
  */
-  __pyx_t_29 = PyTuple_New(13); if (unlikely(!__pyx_t_29)) __PYX_ERR(1, 166, __pyx_L1_error)
+  __pyx_t_29 = PyTuple_New(13); if (unlikely(!__pyx_t_29)) __PYX_ERR(1, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_29);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 0, __pyx_t_2)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 0, __pyx_t_2)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 1, __pyx_t_7)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 1, __pyx_t_7)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_12);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 2, __pyx_t_12)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 2, __pyx_t_12)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 3, __pyx_t_5)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 3, __pyx_t_5)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 4, __pyx_t_6)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 4, __pyx_t_6)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 5, __pyx_t_4)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 5, __pyx_t_4)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_11);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 6, __pyx_t_11)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 6, __pyx_t_11)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_23);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 7, __pyx_t_23)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 7, __pyx_t_23)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_24);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 8, __pyx_t_24)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 8, __pyx_t_24)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_25);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 9, __pyx_t_25)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 9, __pyx_t_25)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_26);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 10, __pyx_t_26)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 10, __pyx_t_26)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_27);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 11, __pyx_t_27)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 11, __pyx_t_27)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_28);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 12, __pyx_t_28)) __PYX_ERR(1, 166, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 12, __pyx_t_28)) __PYX_ERR(1, 167, __pyx_L1_error);
   __pyx_t_2 = 0;
   __pyx_t_7 = 0;
   __pyx_t_12 = 0;
@@ -18854,7 +18854,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   __pyx_t_29 = 0;
   goto __pyx_L0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":69
+  /* "DataWranglingToolsPYtoCPP.pyx":70
  * 
  * 
  * def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
@@ -18904,7 +18904,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   return __pyx_r;
 }
 
-/* "DataWranglingToolsPYtoCPP.pyx":183
+/* "DataWranglingToolsPYtoCPP.pyx":184
  * 
  * 
  * def getAverageVarAndSDPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
@@ -18946,7 +18946,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
   #else
   __pyx_nargs = PyTuple_Size(__pyx_args);
-  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 183, __pyx_L3_error)
+  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 184, __pyx_L3_error)
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
@@ -18967,12 +18967,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 183, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 184, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getAverageVarAndSDPYtoCPP") < 0)) __PYX_ERR(1, 183, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getAverageVarAndSDPYtoCPP") < 0)) __PYX_ERR(1, 184, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -18983,7 +18983,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getAverageVarAndSDPYtoCPP", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 183, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getAverageVarAndSDPYtoCPP", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 184, __pyx_L3_error)
   goto __pyx_L3_error;
   __pyx_L3_error:;
   {
@@ -19033,45 +19033,45 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
   __Pyx_RefNannySetupContext("getAverageVarAndSDPYtoCPP", 0);
   __Pyx_INCREF(__pyx_v_dataValues);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":203
+  /* "DataWranglingToolsPYtoCPP.pyx":204
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)
  */
-  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 203, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 203, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 204, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 204, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "DataWranglingToolsPYtoCPP.pyx":205
+    /* "DataWranglingToolsPYtoCPP.pyx":206
  *     if type (dataValues) == list:
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
  * 
  *     else:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 205, __pyx_L1_error);
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 205, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 206, __pyx_L1_error);
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 205, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 205, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 206, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19079,7 +19079,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
     __Pyx_DECREF_SET(__pyx_v_dataValues, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "DataWranglingToolsPYtoCPP.pyx":203
+    /* "DataWranglingToolsPYtoCPP.pyx":204
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
@@ -19089,7 +19089,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
     goto __pyx_L3;
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":209
+  /* "DataWranglingToolsPYtoCPP.pyx":210
  *     else:
  * 
  *         dataValues = np.ascontiguousarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
@@ -19097,26 +19097,26 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  * 
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 209, __pyx_L1_error);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 209, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 210, __pyx_L1_error);
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 209, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 209, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 210, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -19126,35 +19126,35 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
   }
   __pyx_L3:;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":218
+  /* "DataWranglingToolsPYtoCPP.pyx":219
  * 
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]             # <<<<<<<<<<<<<<
  *     cdef double [::1] dataValues_view = dataValues
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 218, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 218, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 218, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 219, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_numberOfDataValues = __pyx_t_7;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":219
+  /* "DataWranglingToolsPYtoCPP.pyx":220
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]
  *     cdef double [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
  * 
  *     cdef double averageValue = 0.
  */
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 219, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 220, __pyx_L1_error)
   __pyx_v_dataValues_view = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":221
+  /* "DataWranglingToolsPYtoCPP.pyx":222
  *     cdef double [::1] dataValues_view = dataValues
  * 
  *     cdef double averageValue = 0.             # <<<<<<<<<<<<<<
@@ -19163,7 +19163,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  */
   __pyx_v_averageValue = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":222
+  /* "DataWranglingToolsPYtoCPP.pyx":223
  * 
  *     cdef double averageValue = 0.
  *     cdef double standardDeviation = 0.             # <<<<<<<<<<<<<<
@@ -19172,7 +19172,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  */
   __pyx_v_standardDeviation = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":223
+  /* "DataWranglingToolsPYtoCPP.pyx":224
  *     cdef double averageValue = 0.
  *     cdef double standardDeviation = 0.
  *     cdef double variance = 0.             # <<<<<<<<<<<<<<
@@ -19181,7 +19181,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  */
   __pyx_v_variance = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":227
+  /* "DataWranglingToolsPYtoCPP.pyx":228
  * 
  *     DataWranglingToolsCPPCoreObject.getAverageVarAndSD (
  *         &dataValues_view [0], #1             # <<<<<<<<<<<<<<
@@ -19196,10 +19196,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
   } else if (unlikely(__pyx_t_9 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_10 = 0;
   if (unlikely(__pyx_t_10 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_10);
-    __PYX_ERR(1, 227, __pyx_L1_error)
+    __PYX_ERR(1, 228, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":226
+  /* "DataWranglingToolsPYtoCPP.pyx":227
  * 
  * 
  *     DataWranglingToolsCPPCoreObject.getAverageVarAndSD (             # <<<<<<<<<<<<<<
@@ -19208,7 +19208,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  */
   __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getAverageVarAndSD((&(*((double *) ( /* dim=0 */ ((char *) (((double *) __pyx_v_dataValues_view.data) + __pyx_t_9)) )))), __pyx_v_numberOfDataValues, __pyx_v_averageValue, __pyx_v_standardDeviation, __pyx_v_variance);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":234
+  /* "DataWranglingToolsPYtoCPP.pyx":235
  *     )
  * 
  *     return averageValue, \             # <<<<<<<<<<<<<<
@@ -19216,44 +19216,44 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
  *            variance
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_averageValue); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 234, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_averageValue); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":235
+  /* "DataWranglingToolsPYtoCPP.pyx":236
  * 
  *     return averageValue, \
  *            standardDeviation, \             # <<<<<<<<<<<<<<
  *            variance
  * 
  */
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_standardDeviation); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 235, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_standardDeviation); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 236, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":236
+  /* "DataWranglingToolsPYtoCPP.pyx":237
  *     return averageValue, \
  *            standardDeviation, \
  *            variance             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_variance); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 236, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_variance); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 237, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":234
+  /* "DataWranglingToolsPYtoCPP.pyx":235
  *     )
  * 
  *     return averageValue, \             # <<<<<<<<<<<<<<
  *            standardDeviation, \
  *            variance
  */
-  __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 234, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 235, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1)) __PYX_ERR(1, 234, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1)) __PYX_ERR(1, 235, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_5)) __PYX_ERR(1, 234, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_5)) __PYX_ERR(1, 235, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_6)) __PYX_ERR(1, 234, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_6)) __PYX_ERR(1, 235, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
@@ -19261,7 +19261,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":183
+  /* "DataWranglingToolsPYtoCPP.pyx":184
  * 
  * 
  * def getAverageVarAndSDPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
@@ -19287,7 +19287,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_2getAverageVarAndSDPYtoCPP
   return __pyx_r;
 }
 
-/* "DataWranglingToolsPYtoCPP.pyx":240
+/* "DataWranglingToolsPYtoCPP.pyx":241
  * 
  * 
  * def getMedianAndQuantilesPYtoCPP (             # <<<<<<<<<<<<<<
@@ -19331,7 +19331,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
   #else
   __pyx_nargs = PyTuple_Size(__pyx_args);
-  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 240, __pyx_L3_error)
+  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 241, __pyx_L3_error)
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
@@ -19358,26 +19358,26 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 240, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 241, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_lowerQuantile);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 240, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 241, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_upperQuantile);
           if (value) { values[2] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 240, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 241, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getMedianAndQuantilesPYtoCPP") < 0)) __PYX_ERR(1, 240, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getMedianAndQuantilesPYtoCPP") < 0)) __PYX_ERR(1, 241, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -19396,7 +19396,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getMedianAndQuantilesPYtoCPP", 0, 1, 3, __pyx_nargs); __PYX_ERR(1, 240, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getMedianAndQuantilesPYtoCPP", 0, 1, 3, __pyx_nargs); __PYX_ERR(1, 241, __pyx_L3_error)
   goto __pyx_L3_error;
   __pyx_L3_error:;
   {
@@ -19448,45 +19448,45 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
   __Pyx_RefNannySetupContext("getMedianAndQuantilesPYtoCPP", 0);
   __Pyx_INCREF(__pyx_v_dataValues);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":263
+  /* "DataWranglingToolsPYtoCPP.pyx":264
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)
  */
-  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 263, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 263, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 264, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 264, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "DataWranglingToolsPYtoCPP.pyx":265
+    /* "DataWranglingToolsPYtoCPP.pyx":266
  *     if type (dataValues) == list:
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
  * 
  *     else:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 265, __pyx_L1_error);
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 265, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 266, __pyx_L1_error);
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 265, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 265, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 266, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19494,7 +19494,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
     __Pyx_DECREF_SET(__pyx_v_dataValues, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "DataWranglingToolsPYtoCPP.pyx":263
+    /* "DataWranglingToolsPYtoCPP.pyx":264
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
@@ -19504,7 +19504,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
     goto __pyx_L3;
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":269
+  /* "DataWranglingToolsPYtoCPP.pyx":270
  *     else:
  * 
  *         dataValues = np.ascontiguousarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
@@ -19512,26 +19512,26 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  * 
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 269, __pyx_L1_error);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 269, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 270, __pyx_L1_error);
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 269, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 269, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 270, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -19541,35 +19541,35 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
   }
   __pyx_L3:;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":278
+  /* "DataWranglingToolsPYtoCPP.pyx":279
  * 
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]             # <<<<<<<<<<<<<<
  *     cdef double [::1] dataValues_view = dataValues
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 278, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 278, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 279, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 278, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 279, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_numberOfDataValues = __pyx_t_7;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":279
+  /* "DataWranglingToolsPYtoCPP.pyx":280
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]
  *     cdef double [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
  * 
  *     cdef double medianValue = 0.
  */
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 279, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 280, __pyx_L1_error)
   __pyx_v_dataValues_view = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":281
+  /* "DataWranglingToolsPYtoCPP.pyx":282
  *     cdef double [::1] dataValues_view = dataValues
  * 
  *     cdef double medianValue = 0.             # <<<<<<<<<<<<<<
@@ -19578,7 +19578,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  */
   __pyx_v_medianValue = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":282
+  /* "DataWranglingToolsPYtoCPP.pyx":283
  * 
  *     cdef double medianValue = 0.
  *     cdef double lowerQuantileValue = 0.             # <<<<<<<<<<<<<<
@@ -19587,7 +19587,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  */
   __pyx_v_lowerQuantileValue = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":283
+  /* "DataWranglingToolsPYtoCPP.pyx":284
  *     cdef double medianValue = 0.
  *     cdef double lowerQuantileValue = 0.
  *     cdef double upperQuantileValue = 0.             # <<<<<<<<<<<<<<
@@ -19596,7 +19596,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  */
   __pyx_v_upperQuantileValue = 0.;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":287
+  /* "DataWranglingToolsPYtoCPP.pyx":288
  * 
  *     DataWranglingToolsCPPCoreObject.getMedianAndQuantiles (
  *         &dataValues_view [0], #1             # <<<<<<<<<<<<<<
@@ -19611,28 +19611,28 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
   } else if (unlikely(__pyx_t_9 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_10 = 0;
   if (unlikely(__pyx_t_10 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_10);
-    __PYX_ERR(1, 287, __pyx_L1_error)
+    __PYX_ERR(1, 288, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":290
+  /* "DataWranglingToolsPYtoCPP.pyx":291
  *         numberOfDataValues, #2
  *         medianValue, #3
  *         lowerQuantile, #4             # <<<<<<<<<<<<<<
  *         lowerQuantileValue, #5
  *         upperQuantile, #6
  */
-  __pyx_t_11 = __pyx_PyFloat_AsFloat(__pyx_v_lowerQuantile); if (unlikely((__pyx_t_11 == (float)-1) && PyErr_Occurred())) __PYX_ERR(1, 290, __pyx_L1_error)
+  __pyx_t_11 = __pyx_PyFloat_AsFloat(__pyx_v_lowerQuantile); if (unlikely((__pyx_t_11 == (float)-1) && PyErr_Occurred())) __PYX_ERR(1, 291, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":292
+  /* "DataWranglingToolsPYtoCPP.pyx":293
  *         lowerQuantile, #4
  *         lowerQuantileValue, #5
  *         upperQuantile, #6             # <<<<<<<<<<<<<<
  *         upperQuantileValue #7
  *     )
  */
-  __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_v_upperQuantile); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(1, 292, __pyx_L1_error)
+  __pyx_t_12 = __pyx_PyFloat_AsFloat(__pyx_v_upperQuantile); if (unlikely((__pyx_t_12 == (float)-1) && PyErr_Occurred())) __PYX_ERR(1, 293, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":286
+  /* "DataWranglingToolsPYtoCPP.pyx":287
  * 
  * 
  *     DataWranglingToolsCPPCoreObject.getMedianAndQuantiles (             # <<<<<<<<<<<<<<
@@ -19641,7 +19641,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  */
   __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getMedianAndQuantiles((&(*((double *) ( /* dim=0 */ ((char *) (((double *) __pyx_v_dataValues_view.data) + __pyx_t_9)) )))), __pyx_v_numberOfDataValues, __pyx_v_medianValue, __pyx_t_11, __pyx_v_lowerQuantileValue, __pyx_t_12, __pyx_v_upperQuantileValue);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":297
+  /* "DataWranglingToolsPYtoCPP.pyx":298
  * 
  * 
  *     return medianValue, \             # <<<<<<<<<<<<<<
@@ -19649,44 +19649,44 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
  *            upperQuantileValue
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_medianValue); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 297, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_medianValue); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":298
+  /* "DataWranglingToolsPYtoCPP.pyx":299
  * 
  *     return medianValue, \
  *            lowerQuantileValue, \             # <<<<<<<<<<<<<<
  *            upperQuantileValue
  * 
  */
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_lowerQuantileValue); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 298, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_lowerQuantileValue); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 299, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":299
+  /* "DataWranglingToolsPYtoCPP.pyx":300
  *     return medianValue, \
  *            lowerQuantileValue, \
  *            upperQuantileValue             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_upperQuantileValue); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 299, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_upperQuantileValue); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 300, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":297
+  /* "DataWranglingToolsPYtoCPP.pyx":298
  * 
  * 
  *     return medianValue, \             # <<<<<<<<<<<<<<
  *            lowerQuantileValue, \
  *            upperQuantileValue
  */
-  __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 297, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 298, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1)) __PYX_ERR(1, 297, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1)) __PYX_ERR(1, 298, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_5)) __PYX_ERR(1, 297, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_5)) __PYX_ERR(1, 298, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_6)) __PYX_ERR(1, 297, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_6)) __PYX_ERR(1, 298, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_t_5 = 0;
   __pyx_t_6 = 0;
@@ -19694,7 +19694,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":240
+  /* "DataWranglingToolsPYtoCPP.pyx":241
  * 
  * 
  * def getMedianAndQuantilesPYtoCPP (             # <<<<<<<<<<<<<<
@@ -19720,7 +19720,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_4getMedianAndQuantilesPYto
   return __pyx_r;
 }
 
-/* "DataWranglingToolsPYtoCPP.pyx":302
+/* "DataWranglingToolsPYtoCPP.pyx":304
  * 
  * 
  * def getNearestValuePYtoCPP (             # <<<<<<<<<<<<<<
@@ -19764,7 +19764,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
   #else
   __pyx_nargs = PyTuple_Size(__pyx_args);
-  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 302, __pyx_L3_error)
+  if (unlikely((__pyx_nargs < 0))) __PYX_ERR(1, 304, __pyx_L3_error)
   #endif
   #endif
   __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
@@ -19790,7 +19790,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 302, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 304, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -19798,21 +19798,21 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 302, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 304, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("getNearestValuePYtoCPP", 0, 2, 3, 1); __PYX_ERR(1, 302, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("getNearestValuePYtoCPP", 0, 2, 3, 1); __PYX_ERR(1, 304, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_monotonicList);
           if (value) { values[2] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 302, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 304, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getNearestValuePYtoCPP") < 0)) __PYX_ERR(1, 302, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "getNearestValuePYtoCPP") < 0)) __PYX_ERR(1, 304, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -19830,7 +19830,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("getNearestValuePYtoCPP", 0, 2, 3, __pyx_nargs); __PYX_ERR(1, 302, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("getNearestValuePYtoCPP", 0, 2, 3, __pyx_nargs); __PYX_ERR(1, 304, __pyx_L3_error)
   goto __pyx_L3_error;
   __pyx_L3_error:;
   {
@@ -19880,7 +19880,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
   __Pyx_RefNannySetupContext("getNearestValuePYtoCPP", 0);
   __Pyx_INCREF(__pyx_v_dataValues);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":317
+  /* "DataWranglingToolsPYtoCPP.pyx":319
  *     global DataWranglingToolsCPPCoreObject
  * 
  *     cdef int iSmallestDifference = 0             # <<<<<<<<<<<<<<
@@ -19889,7 +19889,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
  */
   __pyx_v_iSmallestDifference = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":318
+  /* "DataWranglingToolsPYtoCPP.pyx":320
  * 
  *     cdef int iSmallestDifference = 0
  *     cdef double smallestDifference = 0             # <<<<<<<<<<<<<<
@@ -19898,45 +19898,45 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
  */
   __pyx_v_smallestDifference = 0.0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":322
+  /* "DataWranglingToolsPYtoCPP.pyx":324
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)
  */
-  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 322, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 322, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 324, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 324, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_2) {
 
-    /* "DataWranglingToolsPYtoCPP.pyx":324
+    /* "DataWranglingToolsPYtoCPP.pyx":326
  *     if type (dataValues) == list:
  * 
  *         dataValues = np.asarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
  * 
  *     else:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_asarray); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 324, __pyx_L1_error);
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 324, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_dataValues)) __PYX_ERR(1, 326, __pyx_L1_error);
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 324, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dtype, __pyx_t_6) < 0) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 324, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 326, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -19944,7 +19944,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
     __Pyx_DECREF_SET(__pyx_v_dataValues, __pyx_t_6);
     __pyx_t_6 = 0;
 
-    /* "DataWranglingToolsPYtoCPP.pyx":322
+    /* "DataWranglingToolsPYtoCPP.pyx":324
  * 
  *     # Make sure the dataValues list is a NumPy array.
  *     if type (dataValues) == list:             # <<<<<<<<<<<<<<
@@ -19954,7 +19954,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
     goto __pyx_L3;
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":328
+  /* "DataWranglingToolsPYtoCPP.pyx":330
  *     else:
  * 
  *         dataValues = np.ascontiguousarray (dataValues, dtype = np.double)             # <<<<<<<<<<<<<<
@@ -19962,26 +19962,26 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
  * 
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_ascontiguousarray); if (unlikely(!__pyx_t_4)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_INCREF(__pyx_v_dataValues);
     __Pyx_GIVEREF(__pyx_v_dataValues);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 328, __pyx_L1_error);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 328, __pyx_L1_error)
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dataValues)) __PYX_ERR(1, 330, __pyx_L1_error);
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 328, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_t_5) < 0) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 328, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 330, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -19991,35 +19991,35 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
   }
   __pyx_L3:;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":331
+  /* "DataWranglingToolsPYtoCPP.pyx":333
  * 
  * 
  *     cdef Py_ssize_t numberOfValues = dataValues.shape [0]             # <<<<<<<<<<<<<<
  *     cdef double [::1] dataValues_view = dataValues
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 331, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 333, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 331, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 333, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 331, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyIndex_AsSsize_t(__pyx_t_1); if (unlikely((__pyx_t_7 == (Py_ssize_t)-1) && PyErr_Occurred())) __PYX_ERR(1, 333, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_numberOfValues = __pyx_t_7;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":332
+  /* "DataWranglingToolsPYtoCPP.pyx":334
  * 
  *     cdef Py_ssize_t numberOfValues = dataValues.shape [0]
  *     cdef double [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 332, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_to_MemoryviewSlice_dc_double(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_8.memview)) __PYX_ERR(1, 334, __pyx_L1_error)
   __pyx_v_dataValues_view = __pyx_t_8;
   __pyx_t_8.memview = NULL;
   __pyx_t_8.data = NULL;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":336
+  /* "DataWranglingToolsPYtoCPP.pyx":338
  * 
  *     DataWranglingToolsCPPCoreObject.getNearestValue (
  *         &dataValues_view [0], #1             # <<<<<<<<<<<<<<
@@ -20034,28 +20034,28 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
   } else if (unlikely(__pyx_t_9 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_10 = 0;
   if (unlikely(__pyx_t_10 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_10);
-    __PYX_ERR(1, 336, __pyx_L1_error)
+    __PYX_ERR(1, 338, __pyx_L1_error)
   }
 
-  /* "DataWranglingToolsPYtoCPP.pyx":338
+  /* "DataWranglingToolsPYtoCPP.pyx":340
  *         &dataValues_view [0], #1
  *         numberOfValues, #2
  *         valueToCompare, #3             # <<<<<<<<<<<<<<
  *         iSmallestDifference, #4
  *         smallestDifference, #5
  */
-  __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_v_valueToCompare); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 338, __pyx_L1_error)
+  __pyx_t_11 = __pyx_PyFloat_AsDouble(__pyx_v_valueToCompare); if (unlikely((__pyx_t_11 == (double)-1) && PyErr_Occurred())) __PYX_ERR(1, 340, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":341
+  /* "DataWranglingToolsPYtoCPP.pyx":343
  *         iSmallestDifference, #4
  *         smallestDifference, #5
  *         monotonicList #6             # <<<<<<<<<<<<<<
  *     )
  * 
  */
-  __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_v_monotonicList); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 341, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyInt_As_int(__pyx_v_monotonicList); if (unlikely((__pyx_t_10 == (int)-1) && PyErr_Occurred())) __PYX_ERR(1, 343, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":335
+  /* "DataWranglingToolsPYtoCPP.pyx":337
  * 
  * 
  *     DataWranglingToolsCPPCoreObject.getNearestValue (             # <<<<<<<<<<<<<<
@@ -20064,31 +20064,29 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_6getNearestValuePYtoCPP(CY
  */
   __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getNearestValue((&(*((double *) ( /* dim=0 */ ((char *) (((double *) __pyx_v_dataValues_view.data) + __pyx_t_9)) )))), __pyx_v_numberOfValues, __pyx_t_11, __pyx_v_iSmallestDifference, __pyx_v_smallestDifference, __pyx_t_10);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":345
+  /* "DataWranglingToolsPYtoCPP.pyx":347
  * 
  * 
  *     return iSmallestDifference, smallestDifference             # <<<<<<<<<<<<<<
- * 
- * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_iSmallestDifference); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 345, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_iSmallestDifference); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_smallestDifference); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 345, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_smallestDifference); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 345, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 347, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1)) __PYX_ERR(1, 345, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1)) __PYX_ERR(1, 347, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_5)) __PYX_ERR(1, 345, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_t_5)) __PYX_ERR(1, 347, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_t_5 = 0;
   __pyx_r = __pyx_t_6;
   __pyx_t_6 = 0;
   goto __pyx_L0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":302
+  /* "DataWranglingToolsPYtoCPP.pyx":304
  * 
  * 
  * def getNearestValuePYtoCPP (             # <<<<<<<<<<<<<<
@@ -21412,57 +21410,57 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__18);
   __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Enum, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 1, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":69
+  /* "DataWranglingToolsPYtoCPP.pyx":70
  * 
  * 
  * def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
  *     '''
  * 
  */
-  __pyx_tuple__20 = PyTuple_Pack(22, __pyx_n_s_dataValues, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_numberOfSegments, __pyx_n_s_numberOfSegmentsNegative, __pyx_n_s_numberOfSegmentsPositive, __pyx_n_s_iSteepestNegativeSlopeSegment, __pyx_n_s_iSegmentStartIndicesSteepestNega, __pyx_n_s_iSteepestPositiveSlopeSegment, __pyx_n_s_iSegmentStartIndicesSteepestPosi, __pyx_n_s_segmentAmplitudes, __pyx_n_s_segmentAmplitudes_view, __pyx_n_s_segmentSlopes, __pyx_n_s_segmentSlopes_view, __pyx_n_s_segmentDurations, __pyx_n_s_segmentDurations_view, __pyx_n_s_segmentStartIndices, __pyx_n_s_segmentStartIndices_view, __pyx_n_s_segmentStartIndicesNegative, __pyx_n_s_segmentStartIndicesNegative_view, __pyx_n_s_segmentStartIndicesPositive, __pyx_n_s_segmentStartIndicesPositive_view); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 69, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(22, __pyx_n_s_dataValues, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_numberOfSegments, __pyx_n_s_numberOfSegmentsNegative, __pyx_n_s_numberOfSegmentsPositive, __pyx_n_s_iSteepestNegativeSlopeSegment, __pyx_n_s_iSegmentStartIndicesSteepestNega, __pyx_n_s_iSteepestPositiveSlopeSegment, __pyx_n_s_iSegmentStartIndicesSteepestPosi, __pyx_n_s_segmentAmplitudes, __pyx_n_s_segmentAmplitudes_view, __pyx_n_s_segmentSlopes, __pyx_n_s_segmentSlopes_view, __pyx_n_s_segmentDurations, __pyx_n_s_segmentDurations_view, __pyx_n_s_segmentStartIndices, __pyx_n_s_segmentStartIndices_view, __pyx_n_s_segmentStartIndicesNegative, __pyx_n_s_segmentStartIndicesNegative_view, __pyx_n_s_segmentStartIndicesPositive, __pyx_n_s_segmentStartIndicesPositive_view); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(1, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(1, 69, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 22, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(1, 70, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":183
+  /* "DataWranglingToolsPYtoCPP.pyx":184
  * 
  * 
  * def getAverageVarAndSDPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
  *     '''
  * 
  */
-  __pyx_tuple__22 = PyTuple_Pack(6, __pyx_n_s_dataValues, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_averageValue, __pyx_n_s_standardDeviation, __pyx_n_s_variance); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 183, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(6, __pyx_n_s_dataValues, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_averageValue, __pyx_n_s_standardDeviation, __pyx_n_s_variance); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(1, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getAverageVarAndSDPYtoCPP, 183, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 183, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getAverageVarAndSDPYtoCPP, 184, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 184, __pyx_L1_error)
 
-  /* "DataWranglingToolsPYtoCPP.pyx":240
+  /* "DataWranglingToolsPYtoCPP.pyx":241
  * 
  * 
  * def getMedianAndQuantilesPYtoCPP (             # <<<<<<<<<<<<<<
  *     dataValues,
  *     lowerQuantile = 0.25,
  */
-  __pyx_tuple__24 = PyTuple_Pack(8, __pyx_n_s_dataValues, __pyx_n_s_lowerQuantile, __pyx_n_s_upperQuantile, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_medianValue, __pyx_n_s_lowerQuantileValue, __pyx_n_s_upperQuantileValue); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 240, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(8, __pyx_n_s_dataValues, __pyx_n_s_lowerQuantile, __pyx_n_s_upperQuantile, __pyx_n_s_numberOfDataValues, __pyx_n_s_dataValues_view, __pyx_n_s_medianValue, __pyx_n_s_lowerQuantileValue, __pyx_n_s_upperQuantileValue); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(1, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getMedianAndQuantilesPYtoCPP, 240, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(1, 240, __pyx_L1_error)
-  __pyx_tuple__26 = PyTuple_Pack(2, ((PyObject*)__pyx_float_0_25), ((PyObject*)__pyx_float_0_75)); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 240, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getMedianAndQuantilesPYtoCPP, 241, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(1, 241, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(2, ((PyObject*)__pyx_float_0_25), ((PyObject*)__pyx_float_0_75)); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(1, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
 
-  /* "DataWranglingToolsPYtoCPP.pyx":302
+  /* "DataWranglingToolsPYtoCPP.pyx":304
  * 
  * 
  * def getNearestValuePYtoCPP (             # <<<<<<<<<<<<<<
  *     dataValues,
  *     valueToCompare,
  */
-  __pyx_tuple__27 = PyTuple_Pack(7, __pyx_n_s_dataValues, __pyx_n_s_valueToCompare, __pyx_n_s_monotonicList, __pyx_n_s_iSmallestDifference, __pyx_n_s_smallestDifference, __pyx_n_s_numberOfValues, __pyx_n_s_dataValues_view); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 302, __pyx_L1_error)
+  __pyx_tuple__27 = PyTuple_Pack(7, __pyx_n_s_dataValues, __pyx_n_s_valueToCompare, __pyx_n_s_monotonicList, __pyx_n_s_iSmallestDifference, __pyx_n_s_smallestDifference, __pyx_n_s_numberOfValues, __pyx_n_s_dataValues_view); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(1, 304, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__27);
   __Pyx_GIVEREF(__pyx_tuple__27);
-  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getNearestValuePYtoCPP, 302, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(1, 302, __pyx_L1_error)
-  __pyx_tuple__29 = PyTuple_Pack(1, ((PyObject *)__pyx_int_1)); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 302, __pyx_L1_error)
+  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__27, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_DataWranglingToolsPYtoCPP_pyx, __pyx_n_s_getNearestValuePYtoCPP, 304, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(1, 304, __pyx_L1_error)
+  __pyx_tuple__29 = PyTuple_Pack(1, ((PyObject *)__pyx_int_1)); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(1, 304, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__29);
   __Pyx_GIVEREF(__pyx_tuple__29);
   __Pyx_RefNannyFinishContext();
@@ -22531,54 +22529,54 @@ if (!__Pyx_RefNanny) {
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_np, __pyx_t_7) < 0) __PYX_ERR(1, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":69
+  /* "DataWranglingToolsPYtoCPP.pyx":70
  * 
  * 
  * def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
  *     '''
  * 
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_1getSegmentSpecsFromDataValuesPYtoCPP, 0, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 69, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_1getSegmentSpecsFromDataValuesPYtoCPP, 0, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 70, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, __pyx_t_7) < 0) __PYX_ERR(1, 69, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getSegmentSpecsFromDataValuesPYt, __pyx_t_7) < 0) __PYX_ERR(1, 70, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":183
+  /* "DataWranglingToolsPYtoCPP.pyx":184
  * 
  * 
  * def getAverageVarAndSDPYtoCPP (dataValues):             # <<<<<<<<<<<<<<
  *     '''
  * 
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_3getAverageVarAndSDPYtoCPP, 0, __pyx_n_s_getAverageVarAndSDPYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 183, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_3getAverageVarAndSDPYtoCPP, 0, __pyx_n_s_getAverageVarAndSDPYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 184, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getAverageVarAndSDPYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 183, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getAverageVarAndSDPYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 184, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":240
+  /* "DataWranglingToolsPYtoCPP.pyx":241
  * 
  * 
  * def getMedianAndQuantilesPYtoCPP (             # <<<<<<<<<<<<<<
  *     dataValues,
  *     lowerQuantile = 0.25,
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_5getMedianAndQuantilesPYtoCPP, 0, __pyx_n_s_getMedianAndQuantilesPYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 240, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_5getMedianAndQuantilesPYtoCPP, 0, __pyx_n_s_getMedianAndQuantilesPYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 241, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_7, __pyx_tuple__26);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getMedianAndQuantilesPYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 240, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getMedianAndQuantilesPYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 241, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "DataWranglingToolsPYtoCPP.pyx":302
+  /* "DataWranglingToolsPYtoCPP.pyx":304
  * 
  * 
  * def getNearestValuePYtoCPP (             # <<<<<<<<<<<<<<
  *     dataValues,
  *     valueToCompare,
  */
-  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_7getNearestValuePYtoCPP, 0, __pyx_n_s_getNearestValuePYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 302, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CyFunction_New(&__pyx_mdef_25DataWranglingToolsPYtoCPP_7getNearestValuePYtoCPP, 0, __pyx_n_s_getNearestValuePYtoCPP, NULL, __pyx_n_s_DataWranglingToolsPYtoCPP, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 304, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_7, __pyx_tuple__29);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getNearestValuePYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 302, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_getNearestValuePYtoCPP, __pyx_t_7) < 0) __PYX_ERR(1, 304, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
   /* "DataWranglingToolsPYtoCPP.pyx":1

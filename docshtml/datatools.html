@@ -517,13 +517,14 @@ into the np.random.normal method as the standard deviation of the normal distrib
 
 <dl class="py method">
 <dt class="sig sig-object py" id="DataTools.DataTools.getNearestValue">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getNearestValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valueToCompare</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotonicList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getNearestValue" title="Link to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">DataTools.</span></span><span class="sig-name descname"><span class="pre">getNearestValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataValues</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valueToCompare</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">monotonicList</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PYtoCPP</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#DataTools.DataTools.getNearestValue" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataValues</strong> (<em>list</em><em> [</em><em>float</em><em>] or </em><em>NumPy array</em><em> (</em><em>one dimension</em><em>)</em>) – list of monotonically increasing or decreasing data values.</p></li>
 <li><p><strong>valueToCompare</strong> (<em>float</em><em> or </em><em>double</em>) – value to compare the values in <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> with.</p></li>
-<li><p><strong>monotonicList</strong> (<em>bool</em>) – <code class="code docutils literal notranslate"><span class="pre">True</span></code> (default) when the values in the list are strictly monotonically increasing or decreasing.</p></li>
+<li><p><strong>monotonicList</strong> (<em>int</em>) – <code class="code docutils literal notranslate"><span class="pre">1</span></code> (default) when the values in the list are strictly monotonically increasing or decreasing, <code class="code docutils literal notranslate"><span class="pre">0</span></code> when not.</p></li>
+<li><p><strong>PYtoCPP</strong> (<em>boolean</em>) – the user can choose to use Python to analyse the <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> by setting <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span></code> to <code class="code docutils literal notranslate"><span class="pre">False</span></code>,  default = True</p></li>
 </ul>
 </dd>
 </dl>
@@ -531,7 +532,10 @@ into the np.random.normal method as the standard deviation of the normal distrib
 Compare the <code class="code docutils literal notranslate"><span class="pre">valueToCompare</span></code> with all the values in the <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> list (or array) and return index and value of the smallest difference
 in absolute terms. The difference is returned in relative terms, a negative difference means that the closest value in <code class="code docutils literal notranslate"><span class="pre">dataValues</span></code> is smaller
 than the <code class="code docutils literal notranslate"><span class="pre">valueToCompare</span></code>. 
-The user must indicate whether the values in the list are strictly monotonically in(de)creasing or not.</p>
+The user must indicate whether the values in the list are strictly monotonically in(de)creasing or not.
+If there are sequential values in a monotonic list that are the same, and if these happen to be the nearest value, 
+then the C++ version will chose the last one! This is <strong>different</strong> from the <code class="code docutils literal notranslate"><span class="pre">np.argmin</span></code> version that is called if <code class="code docutils literal notranslate"><span class="pre">PYtoCPP</span></code> and/or
+<code class="code docutils literal notranslate"><span class="pre">DataWranglingToolsPYtoCPPExists</span></code> are set to <code class="code docutils literal notranslate"><span class="pre">False</span></code>, which will chose the first one!</p>
 </dd></dl>
 
 </section>
@@ -547,7 +551,7 @@ The user must indicate whether the values in the list are strictly monotonically
 
   <div role="contentinfo">
     <p>&#169; Copyright .
-      <span class="lastupdated">Last updated on Jan 31, 2025, 3:19:10 PM.
+      <span class="lastupdated">Last updated on Jan 31, 2025, 5:12:34 PM.
       </span></p>
   </div>
 

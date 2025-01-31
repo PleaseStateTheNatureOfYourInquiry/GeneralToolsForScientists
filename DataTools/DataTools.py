@@ -1122,13 +1122,15 @@ class DataTools:
         in absolute terms. The difference is returned in relative terms, a negative difference means that the closest value in :code:`dataValues` is smaller
         than the :code:`valueToCompare`. 
         The user must indicate whether the values in the list are strictly monotonically in(de)creasing or not.
-        
+        If there are sequential values in a monotonic list that are the same, and if these happen to be the nearest value, 
+        then the C++ version will chose the last one! This is **different** from the :code:`np.argmin` version that is called if :code:`PYtoCPP` and/or
+        :code:`DataWranglingToolsPYtoCPPExists` are set to :code:`False`, which will chose the first one!        
         '''
 
         if len (dataValues):
 
             if PYtoCPP and DataWranglingToolsPYtoCPPExists:
-            
+                        
                 iNearestValue, smallestDifference = DataWranglingToolsPYtoCPP.getNearestValuePYtoCPP (dataValues, valueToCompare, monotonicList)
 
 
