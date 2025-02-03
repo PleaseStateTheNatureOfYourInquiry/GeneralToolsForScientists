@@ -285,6 +285,8 @@ void DataWranglingToolsCPPCore::getNearestValue (
         valueDifferenceABS = abs (dataValues [iDAT] - valueToCompare);
 
         // The list of values to compare has to be monotonically increasing, then as soon as the closest value has been found, stop the search.
+        //  When there are two or more the same values in the monotonical list, and this value is the nearest to the value to compare, then 
+        //  the choice will be the last of these values in the list, due to the "=" in the "<=" comparison.
         while ( iDAT < numberOfValues && valueDifferenceABS <= smallestDifferenceABS )
         {
        
