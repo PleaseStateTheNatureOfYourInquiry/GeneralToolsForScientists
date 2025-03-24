@@ -15,11 +15,11 @@ cdef extern from "DataWranglingToolsCPPCore.h":
         DataWranglingToolsCPPCore () except+
     
         void getSegmentSpecsFromDataValues ( 
-            short int *, #1 short dataValues [1]
+            float *, #1 short dataValues [1]
             unsigned int, #2 unsigned int numberOfDataValues
             unsigned int *, #3 unsigned int segmentStartIndices [1]
             unsigned int&, #4 unsigned int& numberOfSegments
-            int *, #5 int segmentAmplitudes [1]
+            float *, #5 int segmentAmplitudes [1]
             float *, #6 float segmentSlopes [1]
             unsigned int *, #7 unsigned int segmentDurations [1]
             unsigned int *, #8 unsigned int segmentStartIndicesNegative [1]
@@ -96,9 +96,9 @@ def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):
     global DataWranglingToolsCPPCoreObject
 
     # Make sure the dataValues list is a NumPy array.
-    if type (dataValues) == list or dataValues.dtype != 'int16':
+    if type (dataValues) == list or dataValues.dtype != 'single':
     
-        dataValues = np.asarray (dataValues, dtype = np.short)
+        dataValues = np.asarray (dataValues, dtype = np.single)
 
 
     # Make sure the array is stored contiguously.
@@ -108,7 +108,7 @@ def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):
     
     
     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]
-    cdef short int [::1] dataValues_view = dataValues
+    cdef float [::1] dataValues_view = dataValues
 
 
     cdef unsigned int numberOfSegments = 0
@@ -125,8 +125,8 @@ def getSegmentSpecsFromDataValuesPYtoCPP (dataValues):
     # It is extremely important that the  segmentAmplitudes  array has the type np.int32 (which is int in C++)! 
     #  This is because the amplitudes are differences in the dataValues, which are of type short (-32768 - +32767), 
     #  hence the maximum difference can be + or -65535 !!!
-    segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.int32) )
-    cdef int [::1] segmentAmplitudes_view = segmentAmplitudes
+    segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
+    cdef float [::1] segmentAmplitudes_view = segmentAmplitudes
 
     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
     cdef float [::1] segmentSlopes_view = segmentSlopes

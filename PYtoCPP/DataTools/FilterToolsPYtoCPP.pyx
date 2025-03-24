@@ -15,7 +15,7 @@ cdef extern from "FilterToolsCPPCore.h":
         FilterToolsCPPCore () except+
     
         void passAverageFilter ( 
-            int *, #1
+            float *, #1
             float *, #2
             int, #3
             int #4
@@ -31,8 +31,8 @@ def passAverageFilterPYtoCPP (
 
 
     # Make sure all arrays passed into the function from the Python code are stored contiguously and are integers.
-    listOfNumbers = np.ascontiguousarray (listOfNumbers, dtype = np.int32)
-    cdef int [::1] listOfNumbers_view = listOfNumbers
+    listOfNumbers = np.ascontiguousarray (listOfNumbers, dtype = np.single)
+    cdef float [::1] listOfNumbers_view = listOfNumbers
     
     cdef int numberOfElements = len (listOfNumbers)
 

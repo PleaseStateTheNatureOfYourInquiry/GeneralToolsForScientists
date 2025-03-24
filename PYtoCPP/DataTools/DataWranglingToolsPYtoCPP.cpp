@@ -2598,12 +2598,6 @@ static int __Pyx_ValidateAndInit_memviewslice(
                 PyObject *original_obj);
 
 /* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_short(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
-static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_int(PyObject *, int writable_flag);
-
-/* ObjectToMemviewSlice.proto */
 static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_float(PyObject *, int writable_flag);
 
 /* ObjectToMemviewSlice.proto */
@@ -2749,8 +2743,6 @@ static void __pyx_memoryview_slice_assign_scalar(__Pyx_memviewslice *, int, size
 static void __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *); /*proto*/
 static PyObject *__pyx_unpickle_Enum__set_state(struct __pyx_MemviewEnum_obj *, PyObject *); /*proto*/
 /* #### Code section: typeinfo ### */
-static __Pyx_TypeInfo __Pyx_TypeInfo_short = { "short", NULL, sizeof(short), { 0 }, 0, __PYX_IS_UNSIGNED(short) ? 'U' : 'I', __PYX_IS_UNSIGNED(short), 0 };
-static __Pyx_TypeInfo __Pyx_TypeInfo_int = { "int", NULL, sizeof(int), { 0 }, 0, __PYX_IS_UNSIGNED(int) ? 'U' : 'I', __PYX_IS_UNSIGNED(int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_float = { "float", NULL, sizeof(float), { 0 }, 0, 'R', 0, 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_unsigned_int = { "unsigned int", NULL, sizeof(unsigned int), { 0 }, 0, __PYX_IS_UNSIGNED(unsigned int) ? 'U' : 'I', __PYX_IS_UNSIGNED(unsigned int), 0 };
 static __Pyx_TypeInfo __Pyx_TypeInfo_double = { "double", NULL, sizeof(double), { 0 }, 0, 'R', 0, 0 };
@@ -2808,12 +2800,9 @@ static const char __pyx_k_dtype[] = "dtype";
 static const char __pyx_k_error[] = "error";
 static const char __pyx_k_flags[] = "flags";
 static const char __pyx_k_index[] = "index";
-static const char __pyx_k_int16[] = "int16";
-static const char __pyx_k_int32[] = "int32";
 static const char __pyx_k_numpy[] = "numpy";
 static const char __pyx_k_range[] = "range";
 static const char __pyx_k_shape[] = "shape";
-static const char __pyx_k_short[] = "short";
 static const char __pyx_k_start[] = "start";
 static const char __pyx_k_uintc[] = "uintc";
 static const char __pyx_k_zeros[] = "zeros";
@@ -3123,8 +3112,6 @@ typedef struct {
   PyObject *__pyx_n_s_import;
   PyObject *__pyx_n_s_index;
   PyObject *__pyx_n_s_initializing;
-  PyObject *__pyx_n_u_int16;
-  PyObject *__pyx_n_s_int32;
   PyObject *__pyx_n_s_is_coroutine;
   PyObject *__pyx_kp_u_isenabled;
   PyObject *__pyx_n_s_itemsize;
@@ -3178,8 +3165,8 @@ typedef struct {
   PyObject *__pyx_n_s_setstate;
   PyObject *__pyx_n_s_setstate_cython;
   PyObject *__pyx_n_s_shape;
-  PyObject *__pyx_n_s_short;
   PyObject *__pyx_n_s_single;
+  PyObject *__pyx_n_u_single;
   PyObject *__pyx_n_s_size;
   PyObject *__pyx_n_s_smallestDifference;
   PyObject *__pyx_n_s_spec;
@@ -3377,8 +3364,6 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_import);
   Py_CLEAR(clear_module_state->__pyx_n_s_index);
   Py_CLEAR(clear_module_state->__pyx_n_s_initializing);
-  Py_CLEAR(clear_module_state->__pyx_n_u_int16);
-  Py_CLEAR(clear_module_state->__pyx_n_s_int32);
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
   Py_CLEAR(clear_module_state->__pyx_kp_u_isenabled);
   Py_CLEAR(clear_module_state->__pyx_n_s_itemsize);
@@ -3432,8 +3417,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate);
   Py_CLEAR(clear_module_state->__pyx_n_s_setstate_cython);
   Py_CLEAR(clear_module_state->__pyx_n_s_shape);
-  Py_CLEAR(clear_module_state->__pyx_n_s_short);
   Py_CLEAR(clear_module_state->__pyx_n_s_single);
+  Py_CLEAR(clear_module_state->__pyx_n_u_single);
   Py_CLEAR(clear_module_state->__pyx_n_s_size);
   Py_CLEAR(clear_module_state->__pyx_n_s_smallestDifference);
   Py_CLEAR(clear_module_state->__pyx_n_s_spec);
@@ -3609,8 +3594,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_import);
   Py_VISIT(traverse_module_state->__pyx_n_s_index);
   Py_VISIT(traverse_module_state->__pyx_n_s_initializing);
-  Py_VISIT(traverse_module_state->__pyx_n_u_int16);
-  Py_VISIT(traverse_module_state->__pyx_n_s_int32);
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
   Py_VISIT(traverse_module_state->__pyx_kp_u_isenabled);
   Py_VISIT(traverse_module_state->__pyx_n_s_itemsize);
@@ -3664,8 +3647,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate);
   Py_VISIT(traverse_module_state->__pyx_n_s_setstate_cython);
   Py_VISIT(traverse_module_state->__pyx_n_s_shape);
-  Py_VISIT(traverse_module_state->__pyx_n_s_short);
   Py_VISIT(traverse_module_state->__pyx_n_s_single);
+  Py_VISIT(traverse_module_state->__pyx_n_u_single);
   Py_VISIT(traverse_module_state->__pyx_n_s_size);
   Py_VISIT(traverse_module_state->__pyx_n_s_smallestDifference);
   Py_VISIT(traverse_module_state->__pyx_n_s_spec);
@@ -3857,8 +3840,6 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_import __pyx_mstate_global->__pyx_n_s_import
 #define __pyx_n_s_index __pyx_mstate_global->__pyx_n_s_index
 #define __pyx_n_s_initializing __pyx_mstate_global->__pyx_n_s_initializing
-#define __pyx_n_u_int16 __pyx_mstate_global->__pyx_n_u_int16
-#define __pyx_n_s_int32 __pyx_mstate_global->__pyx_n_s_int32
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
 #define __pyx_kp_u_isenabled __pyx_mstate_global->__pyx_kp_u_isenabled
 #define __pyx_n_s_itemsize __pyx_mstate_global->__pyx_n_s_itemsize
@@ -3912,8 +3893,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_setstate __pyx_mstate_global->__pyx_n_s_setstate
 #define __pyx_n_s_setstate_cython __pyx_mstate_global->__pyx_n_s_setstate_cython
 #define __pyx_n_s_shape __pyx_mstate_global->__pyx_n_s_shape
-#define __pyx_n_s_short __pyx_mstate_global->__pyx_n_s_short
 #define __pyx_n_s_single __pyx_mstate_global->__pyx_n_s_single
+#define __pyx_n_u_single __pyx_mstate_global->__pyx_n_u_single
 #define __pyx_n_s_size __pyx_mstate_global->__pyx_n_s_size
 #define __pyx_n_s_smallestDifference __pyx_mstate_global->__pyx_n_s_smallestDifference
 #define __pyx_n_s_spec __pyx_mstate_global->__pyx_n_s_spec
@@ -17838,22 +17819,20 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   PyObject *__pyx_t_11 = NULL;
   PyObject *__pyx_t_12 = NULL;
   __Pyx_memviewslice __pyx_t_13 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_t_14 = { 0, 0, { 0 }, { 0 }, { 0 } };
-  __Pyx_memviewslice __pyx_t_15 = { 0, 0, { 0 }, { 0 }, { 0 } };
+  Py_ssize_t __pyx_t_14;
+  Py_ssize_t __pyx_t_15;
   Py_ssize_t __pyx_t_16;
   Py_ssize_t __pyx_t_17;
   Py_ssize_t __pyx_t_18;
   Py_ssize_t __pyx_t_19;
   Py_ssize_t __pyx_t_20;
-  Py_ssize_t __pyx_t_21;
-  Py_ssize_t __pyx_t_22;
+  PyObject *__pyx_t_21 = NULL;
+  PyObject *__pyx_t_22 = NULL;
   PyObject *__pyx_t_23 = NULL;
   PyObject *__pyx_t_24 = NULL;
   PyObject *__pyx_t_25 = NULL;
   PyObject *__pyx_t_26 = NULL;
   PyObject *__pyx_t_27 = NULL;
-  PyObject *__pyx_t_28 = NULL;
-  PyObject *__pyx_t_29 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -17863,9 +17842,9 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   /* "DataWranglingToolsPYtoCPP.pyx":99
  * 
  *     # Make sure the dataValues list is a NumPy array.
- *     if type (dataValues) == list or dataValues.dtype != 'int16':             # <<<<<<<<<<<<<<
+ *     if type (dataValues) == list or dataValues.dtype != 'single':             # <<<<<<<<<<<<<<
  * 
- *         dataValues = np.asarray (dataValues, dtype = np.short)
+ *         dataValues = np.asarray (dataValues, dtype = np.single)
  */
   __pyx_t_2 = PyObject_RichCompare(((PyObject *)Py_TYPE(__pyx_v_dataValues)), ((PyObject *)(&PyList_Type)), Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 99, __pyx_L1_error)
   __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 99, __pyx_L1_error)
@@ -17877,16 +17856,16 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   }
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_dtype); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_int16, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 99, __pyx_L1_error)
+  __pyx_t_3 = (__Pyx_PyUnicode_Equals(__pyx_t_2, __pyx_n_u_single, Py_NE)); if (unlikely((__pyx_t_3 < 0))) __PYX_ERR(1, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_1 = __pyx_t_3;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_1) {
 
     /* "DataWranglingToolsPYtoCPP.pyx":101
- *     if type (dataValues) == list or dataValues.dtype != 'int16':
+ *     if type (dataValues) == list or dataValues.dtype != 'single':
  * 
- *         dataValues = np.asarray (dataValues, dtype = np.short)             # <<<<<<<<<<<<<<
+ *         dataValues = np.asarray (dataValues, dtype = np.single)             # <<<<<<<<<<<<<<
  * 
  * 
  */
@@ -17904,7 +17883,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_short); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 101, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_single); if (unlikely(!__pyx_t_7)) __PYX_ERR(1, 101, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_7) < 0) __PYX_ERR(1, 101, __pyx_L1_error)
@@ -17920,9 +17899,9 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
     /* "DataWranglingToolsPYtoCPP.pyx":99
  * 
  *     # Make sure the dataValues list is a NumPy array.
- *     if type (dataValues) == list or dataValues.dtype != 'int16':             # <<<<<<<<<<<<<<
+ *     if type (dataValues) == list or dataValues.dtype != 'single':             # <<<<<<<<<<<<<<
  * 
- *         dataValues = np.asarray (dataValues, dtype = np.short)
+ *         dataValues = np.asarray (dataValues, dtype = np.single)
  */
   }
 
@@ -17993,7 +17972,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]             # <<<<<<<<<<<<<<
- *     cdef short int [::1] dataValues_view = dataValues
+ *     cdef float [::1] dataValues_view = dataValues
  * 
  */
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_dataValues, __pyx_n_s_shape); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 110, __pyx_L1_error)
@@ -18008,11 +17987,11 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   /* "DataWranglingToolsPYtoCPP.pyx":111
  * 
  *     cdef Py_ssize_t numberOfDataValues = dataValues.shape [0]
- *     cdef short int [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
+ *     cdef float [::1] dataValues_view = dataValues             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_short(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 111, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_dataValues, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 111, __pyx_L1_error)
   __pyx_v_dataValues_view = __pyx_t_10;
   __pyx_t_10.memview = NULL;
   __pyx_t_10.data = NULL;
@@ -18083,8 +18062,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   /* "DataWranglingToolsPYtoCPP.pyx":128
  *     #  This is because the amplitudes are differences in the dataValues, which are of type short (-32768 - +32767),
  *     #  hence the maximum difference can be + or -65535 !!!
- *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.int32) )             # <<<<<<<<<<<<<<
- *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes
+ *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )             # <<<<<<<<<<<<<<
+ *     cdef float [::1] segmentAmplitudes_view = segmentAmplitudes
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 128, __pyx_L1_error)
@@ -18108,7 +18087,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GetModuleGlobalName(__pyx_t_11, __pyx_n_s_np); if (unlikely(!__pyx_t_11)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_11);
-  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_int32); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 128, __pyx_L1_error)
+  __pyx_t_12 = __Pyx_PyObject_GetAttrStr(__pyx_t_11, __pyx_n_s_single); if (unlikely(!__pyx_t_12)) __PYX_ERR(1, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_12);
   __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_dtype, __pyx_t_12) < 0) __PYX_ERR(1, 128, __pyx_L1_error)
@@ -18146,18 +18125,18 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
 
   /* "DataWranglingToolsPYtoCPP.pyx":129
  *     #  hence the maximum difference can be + or -65535 !!!
- *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.int32) )
- *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes             # <<<<<<<<<<<<<<
+ *     segmentAmplitudes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
+ *     cdef float [::1] segmentAmplitudes_view = segmentAmplitudes             # <<<<<<<<<<<<<<
  * 
  *     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )
  */
-  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_int(__pyx_v_segmentAmplitudes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 129, __pyx_L1_error)
-  __pyx_v_segmentAmplitudes_view = __pyx_t_13;
-  __pyx_t_13.memview = NULL;
-  __pyx_t_13.data = NULL;
+  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_segmentAmplitudes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 129, __pyx_L1_error)
+  __pyx_v_segmentAmplitudes_view = __pyx_t_10;
+  __pyx_t_10.memview = NULL;
+  __pyx_t_10.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":131
- *     cdef int [::1] segmentAmplitudes_view = segmentAmplitudes
+ *     cdef float [::1] segmentAmplitudes_view = segmentAmplitudes
  * 
  *     segmentSlopes = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.single) )             # <<<<<<<<<<<<<<
  *     cdef float [::1] segmentSlopes_view = segmentSlopes
@@ -18227,10 +18206,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  *     segmentDurations = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc) )
  */
-  __pyx_t_14 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_segmentSlopes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_14.memview)) __PYX_ERR(1, 132, __pyx_L1_error)
-  __pyx_v_segmentSlopes_view = __pyx_t_14;
-  __pyx_t_14.memview = NULL;
-  __pyx_t_14.data = NULL;
+  __pyx_t_10 = __Pyx_PyObject_to_MemoryviewSlice_dc_float(__pyx_v_segmentSlopes, PyBUF_WRITABLE); if (unlikely(!__pyx_t_10.memview)) __PYX_ERR(1, 132, __pyx_L1_error)
+  __pyx_v_segmentSlopes_view = __pyx_t_10;
+  __pyx_t_10.memview = NULL;
+  __pyx_t_10.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":134
  *     cdef float [::1] segmentSlopes_view = segmentSlopes
@@ -18303,10 +18282,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  *     segmentStartIndices = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentDurations, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 135, __pyx_L1_error)
-  __pyx_v_segmentDurations_view = __pyx_t_15;
-  __pyx_t_15.memview = NULL;
-  __pyx_t_15.data = NULL;
+  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentDurations, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 135, __pyx_L1_error)
+  __pyx_v_segmentDurations_view = __pyx_t_13;
+  __pyx_t_13.memview = NULL;
+  __pyx_t_13.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":137
  *     cdef unsigned int [::1] segmentDurations_view = segmentDurations
@@ -18379,10 +18358,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  *     segmentStartIndicesNegative = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndices, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 138, __pyx_L1_error)
-  __pyx_v_segmentStartIndices_view = __pyx_t_15;
-  __pyx_t_15.memview = NULL;
-  __pyx_t_15.data = NULL;
+  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndices, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 138, __pyx_L1_error)
+  __pyx_v_segmentStartIndices_view = __pyx_t_13;
+  __pyx_t_13.memview = NULL;
+  __pyx_t_13.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":140
  *     cdef unsigned int [::1] segmentStartIndices_view = segmentStartIndices
@@ -18455,10 +18434,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  *     segmentStartIndicesPositive = np.ascontiguousarray ( np.zeros (numberOfDataValues, dtype = np.uintc ) )
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesNegative, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 141, __pyx_L1_error)
-  __pyx_v_segmentStartIndicesNegative_view = __pyx_t_15;
-  __pyx_t_15.memview = NULL;
-  __pyx_t_15.data = NULL;
+  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesNegative, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 141, __pyx_L1_error)
+  __pyx_v_segmentStartIndicesNegative_view = __pyx_t_13;
+  __pyx_t_13.memview = NULL;
+  __pyx_t_13.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":143
  *     cdef unsigned int [::1] segmentStartIndicesNegative_view = segmentStartIndicesNegative
@@ -18531,10 +18510,10 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  * 
  */
-  __pyx_t_15 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesPositive, PyBUF_WRITABLE); if (unlikely(!__pyx_t_15.memview)) __PYX_ERR(1, 144, __pyx_L1_error)
-  __pyx_v_segmentStartIndicesPositive_view = __pyx_t_15;
-  __pyx_t_15.memview = NULL;
-  __pyx_t_15.data = NULL;
+  __pyx_t_13 = __Pyx_PyObject_to_MemoryviewSlice_dc_unsigned_int(__pyx_v_segmentStartIndicesPositive, PyBUF_WRITABLE); if (unlikely(!__pyx_t_13.memview)) __PYX_ERR(1, 144, __pyx_L1_error)
+  __pyx_v_segmentStartIndicesPositive_view = __pyx_t_13;
+  __pyx_t_13.memview = NULL;
+  __pyx_t_13.data = NULL;
 
   /* "DataWranglingToolsPYtoCPP.pyx":149
  *     # Call the C++ core function.
@@ -18543,12 +18522,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         numberOfDataValues, #2
  *         &segmentStartIndices_view [0], #3
  */
-  __pyx_t_16 = 0;
+  __pyx_t_14 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_16 < 0) {
-    __pyx_t_16 += __pyx_v_dataValues_view.shape[0];
-    if (unlikely(__pyx_t_16 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_16 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_14 < 0) {
+    __pyx_t_14 += __pyx_v_dataValues_view.shape[0];
+    if (unlikely(__pyx_t_14 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_14 >= __pyx_v_dataValues_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 149, __pyx_L1_error)
@@ -18561,12 +18540,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         numberOfSegments, #4
  *         &segmentAmplitudes_view [0], #5
  */
-  __pyx_t_17 = 0;
+  __pyx_t_15 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_17 < 0) {
-    __pyx_t_17 += __pyx_v_segmentStartIndices_view.shape[0];
-    if (unlikely(__pyx_t_17 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_17 >= __pyx_v_segmentStartIndices_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_15 < 0) {
+    __pyx_t_15 += __pyx_v_segmentStartIndices_view.shape[0];
+    if (unlikely(__pyx_t_15 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_15 >= __pyx_v_segmentStartIndices_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 151, __pyx_L1_error)
@@ -18579,12 +18558,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         &segmentSlopes_view [0], #6
  *         &segmentDurations_view [0], #7
  */
-  __pyx_t_18 = 0;
+  __pyx_t_16 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_18 < 0) {
-    __pyx_t_18 += __pyx_v_segmentAmplitudes_view.shape[0];
-    if (unlikely(__pyx_t_18 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_18 >= __pyx_v_segmentAmplitudes_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_16 < 0) {
+    __pyx_t_16 += __pyx_v_segmentAmplitudes_view.shape[0];
+    if (unlikely(__pyx_t_16 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_16 >= __pyx_v_segmentAmplitudes_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 153, __pyx_L1_error)
@@ -18597,12 +18576,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         &segmentDurations_view [0], #7
  *         &segmentStartIndicesNegative_view [0], #8
  */
-  __pyx_t_19 = 0;
+  __pyx_t_17 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_19 < 0) {
-    __pyx_t_19 += __pyx_v_segmentSlopes_view.shape[0];
-    if (unlikely(__pyx_t_19 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_19 >= __pyx_v_segmentSlopes_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_17 < 0) {
+    __pyx_t_17 += __pyx_v_segmentSlopes_view.shape[0];
+    if (unlikely(__pyx_t_17 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_17 >= __pyx_v_segmentSlopes_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 154, __pyx_L1_error)
@@ -18615,12 +18594,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         &segmentStartIndicesNegative_view [0], #8
  *         numberOfSegmentsNegative, #9
  */
-  __pyx_t_20 = 0;
+  __pyx_t_18 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_20 < 0) {
-    __pyx_t_20 += __pyx_v_segmentDurations_view.shape[0];
-    if (unlikely(__pyx_t_20 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_20 >= __pyx_v_segmentDurations_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_18 < 0) {
+    __pyx_t_18 += __pyx_v_segmentDurations_view.shape[0];
+    if (unlikely(__pyx_t_18 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_18 >= __pyx_v_segmentDurations_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 155, __pyx_L1_error)
@@ -18633,12 +18612,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         numberOfSegmentsNegative, #9
  *         iSteepestNegativeSlopeSegment, #10
  */
-  __pyx_t_21 = 0;
+  __pyx_t_19 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_21 < 0) {
-    __pyx_t_21 += __pyx_v_segmentStartIndicesNegative_view.shape[0];
-    if (unlikely(__pyx_t_21 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_21 >= __pyx_v_segmentStartIndicesNegative_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_19 < 0) {
+    __pyx_t_19 += __pyx_v_segmentStartIndicesNegative_view.shape[0];
+    if (unlikely(__pyx_t_19 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_19 >= __pyx_v_segmentStartIndicesNegative_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 156, __pyx_L1_error)
@@ -18651,12 +18630,12 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         numberOfSegmentsPositive, #13
  *         iSteepestPositiveSlopeSegment, #14
  */
-  __pyx_t_22 = 0;
+  __pyx_t_20 = 0;
   __pyx_t_8 = -1;
-  if (__pyx_t_22 < 0) {
-    __pyx_t_22 += __pyx_v_segmentStartIndicesPositive_view.shape[0];
-    if (unlikely(__pyx_t_22 < 0)) __pyx_t_8 = 0;
-  } else if (unlikely(__pyx_t_22 >= __pyx_v_segmentStartIndicesPositive_view.shape[0])) __pyx_t_8 = 0;
+  if (__pyx_t_20 < 0) {
+    __pyx_t_20 += __pyx_v_segmentStartIndicesPositive_view.shape[0];
+    if (unlikely(__pyx_t_20 < 0)) __pyx_t_8 = 0;
+  } else if (unlikely(__pyx_t_20 >= __pyx_v_segmentStartIndicesPositive_view.shape[0])) __pyx_t_8 = 0;
   if (unlikely(__pyx_t_8 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_8);
     __PYX_ERR(1, 160, __pyx_L1_error)
@@ -18669,7 +18648,7 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *         &dataValues_view [0], #1
  *         numberOfDataValues, #2
  */
-  __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getSegmentSpecsFromDataValues((&(*((short *) ( /* dim=0 */ ((char *) (((short *) __pyx_v_dataValues_view.data) + __pyx_t_16)) )))), __pyx_v_numberOfDataValues, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndices_view.data) + __pyx_t_17)) )))), __pyx_v_numberOfSegments, (&(*((int *) ( /* dim=0 */ ((char *) (((int *) __pyx_v_segmentAmplitudes_view.data) + __pyx_t_18)) )))), (&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_segmentSlopes_view.data) + __pyx_t_19)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentDurations_view.data) + __pyx_t_20)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesNegative_view.data) + __pyx_t_21)) )))), __pyx_v_numberOfSegmentsNegative, __pyx_v_iSteepestNegativeSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestNegativeSlope, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesPositive_view.data) + __pyx_t_22)) )))), __pyx_v_numberOfSegmentsPositive, __pyx_v_iSteepestPositiveSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestPositiveSlope);
+  __pyx_v_25DataWranglingToolsPYtoCPP_DataWranglingToolsCPPCoreObject.getSegmentSpecsFromDataValues((&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_dataValues_view.data) + __pyx_t_14)) )))), __pyx_v_numberOfDataValues, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndices_view.data) + __pyx_t_15)) )))), __pyx_v_numberOfSegments, (&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_segmentAmplitudes_view.data) + __pyx_t_16)) )))), (&(*((float *) ( /* dim=0 */ ((char *) (((float *) __pyx_v_segmentSlopes_view.data) + __pyx_t_17)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentDurations_view.data) + __pyx_t_18)) )))), (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesNegative_view.data) + __pyx_t_19)) )))), __pyx_v_numberOfSegmentsNegative, __pyx_v_iSteepestNegativeSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestNegativeSlope, (&(*((unsigned int *) ( /* dim=0 */ ((char *) (((unsigned int *) __pyx_v_segmentStartIndicesPositive_view.data) + __pyx_t_20)) )))), __pyx_v_numberOfSegmentsPositive, __pyx_v_iSteepestPositiveSlopeSegment, __pyx_v_iSegmentStartIndicesSteepestPositiveSlope);
 
   /* "DataWranglingToolsPYtoCPP.pyx":167
  * 
@@ -18749,8 +18728,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            iSegmentStartIndicesSteepestNegativeSlope, \
  *            numberOfSegmentsPositive, \
  */
-  __pyx_t_23 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestNegativeSlopeSegment); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 174, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_23);
+  __pyx_t_21 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestNegativeSlopeSegment); if (unlikely(!__pyx_t_21)) __PYX_ERR(1, 174, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_21);
 
   /* "DataWranglingToolsPYtoCPP.pyx":175
  *            segmentStartIndicesNegative [0:numberOfSegmentsNegative], \
@@ -18759,8 +18738,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            numberOfSegmentsPositive, \
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  */
-  __pyx_t_24 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestNegativeSlope); if (unlikely(!__pyx_t_24)) __PYX_ERR(1, 175, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_24);
+  __pyx_t_22 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestNegativeSlope); if (unlikely(!__pyx_t_22)) __PYX_ERR(1, 175, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_22);
 
   /* "DataWranglingToolsPYtoCPP.pyx":176
  *            iSteepestNegativeSlopeSegment, \
@@ -18769,8 +18748,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
  *            iSteepestPositiveSlopeSegment, \
  */
-  __pyx_t_25 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsPositive); if (unlikely(!__pyx_t_25)) __PYX_ERR(1, 176, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_25);
+  __pyx_t_23 = __Pyx_PyInt_From_unsigned_int(__pyx_v_numberOfSegmentsPositive); if (unlikely(!__pyx_t_23)) __PYX_ERR(1, 176, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_23);
 
   /* "DataWranglingToolsPYtoCPP.pyx":177
  *            iSegmentStartIndicesSteepestNegativeSlope, \
@@ -18779,8 +18758,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            iSteepestPositiveSlopeSegment, \
  *            iSegmentStartIndicesSteepestPositiveSlope
  */
-  __pyx_t_26 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesPositive, 0, __pyx_v_numberOfSegmentsPositive, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 177, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_26);
+  __pyx_t_24 = __Pyx_PyObject_GetSlice(__pyx_v_segmentStartIndicesPositive, 0, __pyx_v_numberOfSegmentsPositive, NULL, NULL, NULL, 1, 1, 1); if (unlikely(!__pyx_t_24)) __PYX_ERR(1, 177, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_24);
 
   /* "DataWranglingToolsPYtoCPP.pyx":178
  *            numberOfSegmentsPositive, \
@@ -18789,8 +18768,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            iSegmentStartIndicesSteepestPositiveSlope
  * 
  */
-  __pyx_t_27 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestPositiveSlopeSegment); if (unlikely(!__pyx_t_27)) __PYX_ERR(1, 178, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_27);
+  __pyx_t_25 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSteepestPositiveSlopeSegment); if (unlikely(!__pyx_t_25)) __PYX_ERR(1, 178, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_25);
 
   /* "DataWranglingToolsPYtoCPP.pyx":179
  *            segmentStartIndicesPositive [0:numberOfSegmentsPositive], \
@@ -18799,8 +18778,8 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  * 
  * 
  */
-  __pyx_t_28 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestPositiveSlope); if (unlikely(!__pyx_t_28)) __PYX_ERR(1, 179, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_28);
+  __pyx_t_26 = __Pyx_PyInt_From_unsigned_int(__pyx_v_iSegmentStartIndicesSteepestPositiveSlope); if (unlikely(!__pyx_t_26)) __PYX_ERR(1, 179, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_26);
 
   /* "DataWranglingToolsPYtoCPP.pyx":167
  * 
@@ -18809,34 +18788,34 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
  *            segmentStartIndices [0:numberOfSegments], \
  *            segmentAmplitudes [0:numberOfSegments], \
  */
-  __pyx_t_29 = PyTuple_New(13); if (unlikely(!__pyx_t_29)) __PYX_ERR(1, 167, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_29);
+  __pyx_t_27 = PyTuple_New(13); if (unlikely(!__pyx_t_27)) __PYX_ERR(1, 167, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_27);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 0, __pyx_t_2)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 0, __pyx_t_2)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_7);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 1, __pyx_t_7)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 1, __pyx_t_7)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_12);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 2, __pyx_t_12)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 2, __pyx_t_12)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_5);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 3, __pyx_t_5)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 3, __pyx_t_5)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_6);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 4, __pyx_t_6)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 4, __pyx_t_6)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_4);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 5, __pyx_t_4)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 5, __pyx_t_4)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_11);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 6, __pyx_t_11)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 6, __pyx_t_11)) __PYX_ERR(1, 167, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_21);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 7, __pyx_t_21)) __PYX_ERR(1, 167, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_22);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 8, __pyx_t_22)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_23);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 7, __pyx_t_23)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 9, __pyx_t_23)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_24);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 8, __pyx_t_24)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 10, __pyx_t_24)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_25);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 9, __pyx_t_25)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 11, __pyx_t_25)) __PYX_ERR(1, 167, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_26);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 10, __pyx_t_26)) __PYX_ERR(1, 167, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_27);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 11, __pyx_t_27)) __PYX_ERR(1, 167, __pyx_L1_error);
-  __Pyx_GIVEREF(__pyx_t_28);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_29, 12, __pyx_t_28)) __PYX_ERR(1, 167, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_27, 12, __pyx_t_26)) __PYX_ERR(1, 167, __pyx_L1_error);
   __pyx_t_2 = 0;
   __pyx_t_7 = 0;
   __pyx_t_12 = 0;
@@ -18844,14 +18823,14 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   __pyx_t_6 = 0;
   __pyx_t_4 = 0;
   __pyx_t_11 = 0;
+  __pyx_t_21 = 0;
+  __pyx_t_22 = 0;
   __pyx_t_23 = 0;
   __pyx_t_24 = 0;
   __pyx_t_25 = 0;
   __pyx_t_26 = 0;
+  __pyx_r = __pyx_t_27;
   __pyx_t_27 = 0;
-  __pyx_t_28 = 0;
-  __pyx_r = __pyx_t_29;
-  __pyx_t_29 = 0;
   goto __pyx_L0;
 
   /* "DataWranglingToolsPYtoCPP.pyx":70
@@ -18873,15 +18852,13 @@ static PyObject *__pyx_pf_25DataWranglingToolsPYtoCPP_getSegmentSpecsFromDataVal
   __Pyx_XDECREF(__pyx_t_11);
   __Pyx_XDECREF(__pyx_t_12);
   __PYX_XCLEAR_MEMVIEW(&__pyx_t_13, 1);
-  __PYX_XCLEAR_MEMVIEW(&__pyx_t_14, 1);
-  __PYX_XCLEAR_MEMVIEW(&__pyx_t_15, 1);
+  __Pyx_XDECREF(__pyx_t_21);
+  __Pyx_XDECREF(__pyx_t_22);
   __Pyx_XDECREF(__pyx_t_23);
   __Pyx_XDECREF(__pyx_t_24);
   __Pyx_XDECREF(__pyx_t_25);
   __Pyx_XDECREF(__pyx_t_26);
   __Pyx_XDECREF(__pyx_t_27);
-  __Pyx_XDECREF(__pyx_t_28);
-  __Pyx_XDECREF(__pyx_t_29);
   __Pyx_AddTraceback("DataWranglingToolsPYtoCPP.getSegmentSpecsFromDataValuesPYtoCPP", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -21165,8 +21142,6 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
     {&__pyx_n_s_index, __pyx_k_index, sizeof(__pyx_k_index), 0, 0, 1, 1},
     {&__pyx_n_s_initializing, __pyx_k_initializing, sizeof(__pyx_k_initializing), 0, 0, 1, 1},
-    {&__pyx_n_u_int16, __pyx_k_int16, sizeof(__pyx_k_int16), 0, 1, 0, 1},
-    {&__pyx_n_s_int32, __pyx_k_int32, sizeof(__pyx_k_int32), 0, 0, 1, 1},
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
     {&__pyx_kp_u_isenabled, __pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0, 0},
     {&__pyx_n_s_itemsize, __pyx_k_itemsize, sizeof(__pyx_k_itemsize), 0, 0, 1, 1},
@@ -21220,8 +21195,8 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
     {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
     {&__pyx_n_s_shape, __pyx_k_shape, sizeof(__pyx_k_shape), 0, 0, 1, 1},
-    {&__pyx_n_s_short, __pyx_k_short, sizeof(__pyx_k_short), 0, 0, 1, 1},
     {&__pyx_n_s_single, __pyx_k_single, sizeof(__pyx_k_single), 0, 0, 1, 1},
+    {&__pyx_n_u_single, __pyx_k_single, sizeof(__pyx_k_single), 0, 1, 0, 1},
     {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
     {&__pyx_n_s_smallestDifference, __pyx_k_smallestDifference, sizeof(__pyx_k_smallestDifference), 0, 0, 1, 1},
     {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
@@ -28098,52 +28073,6 @@ fail:
 no_fail:
     __Pyx_RefNannyFinishContext();
     return retval;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_short(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_CONTIG) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, __Pyx_IS_C_CONTIG,
-                                                 (PyBUF_C_CONTIGUOUS | PyBUF_FORMAT) | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_short, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
-}
-
-/* ObjectToMemviewSlice */
-  static CYTHON_INLINE __Pyx_memviewslice __Pyx_PyObject_to_MemoryviewSlice_dc_int(PyObject *obj, int writable_flag) {
-    __Pyx_memviewslice result = { 0, 0, { 0 }, { 0 }, { 0 } };
-    __Pyx_BufFmt_StackElem stack[1];
-    int axes_specs[] = { (__Pyx_MEMVIEW_DIRECT | __Pyx_MEMVIEW_CONTIG) };
-    int retcode;
-    if (obj == Py_None) {
-        result.memview = (struct __pyx_memoryview_obj *) Py_None;
-        return result;
-    }
-    retcode = __Pyx_ValidateAndInit_memviewslice(axes_specs, __Pyx_IS_C_CONTIG,
-                                                 (PyBUF_C_CONTIGUOUS | PyBUF_FORMAT) | writable_flag, 1,
-                                                 &__Pyx_TypeInfo_int, stack,
-                                                 &result, obj);
-    if (unlikely(retcode == -1))
-        goto __pyx_fail;
-    return result;
-__pyx_fail:
-    result.memview = NULL;
-    result.data = NULL;
-    return result;
 }
 
 /* ObjectToMemviewSlice */

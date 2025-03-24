@@ -14,7 +14,7 @@ FilterToolsCPPCore::~FilterToolsCPPCore () {};
 
 void FilterToolsCPPCore::passAverageFilter (
     // Electrogram
-    int listOfNumbers [1], //1
+    float listOfNumbers [1], //1
     float listOfNumbersFiltered [1], //2
     int numberOfElements, //3
     int widthOfWindow //4

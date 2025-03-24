@@ -2,7 +2,7 @@
 # Author: Maarten Roos-Serote
 # ORCID author: 0000 0001 5001 1347
 
-DataToolsVersion = '20241119'
+DataToolsVersion = '20250307'
 
 # Standard imports.
 import os
@@ -57,16 +57,16 @@ class DataTools:
     # Used in the  getUncertaintyLevelInElectrode  method and by  AnnotationTool  in te NoiseViewer method.
     # Determine the list of amplitude segments for the electrogram.
     @staticmethod
-    def getSegmentSpecsFromDataValues (dataValues, PYtoCPP = True, convertToShort = True):
+    def getSegmentSpecsFromDataValues (dataValues, PYtoCPP = True, convertToSingle = False):
         '''
-        :param dataValues: list (one dimension) of data values. The values in the :code:`dataValues` list are converted to 16-bit integers if code:`PYtoCPP == True`.
-        :type dataValues: list or NumPy array
+        :param dataValues: list (one dimension) of data values. The values in the :code:`dataValues` list are converted to 32-float if code:`PYtoCPP == True`.
+        :type dataValues: list or NumPy array <np.single or float32>
 
         :param PYtoCPP: if :code:`False` use Python, default :code:`True`. 
         :type PYtoCPP: bool
 
-        :param convertToShort: if :code:`True` convert the values in :code:`dataValues` to 16-bit integers, default :code:`True`. 
-        :type convertToShort: bool
+        :param convertToSingle: if :code:`True` convert the values in :code:`dataValues` to 32-float, default :code:`True`. 
+        :type convertToSingle: bool
 
         :return: characteristics of the *segments* defined by :code:`dataValues` (see **Description**) when :code:`PYtoCPP = True`, or list of amplitudes and start indices when :code:`PYtoCPP = False`.
         :rtype: tuple (:code:`PYtoCPP = True`);  list, list (:code:`PYtoCPP = False`)
@@ -96,8 +96,8 @@ class DataTools:
         
         .. note::
         
-            Note that :code:`dataValues` are converted to 16-bit integers when :code:`PYtoCPP = True`. 
-            If :code:`PYtoCPP = False`, then Tte user can choose whether to convert :code:`dataValues` or not by setting the :code:`convertToShort` boolean. 
+            Note that :code:`dataValues` are converted to 32-float (np.single) when :code:`PYtoCPP = True`. 
+            If :code:`PYtoCPP = False`, then the user can choose whether to convert :code:`dataValues` or not by setting the :code:`convertToSingle` boolean. 
 
                  
         '''
@@ -111,9 +111,9 @@ class DataTools:
         # Run the Python version.
         elif not PYtoCPP or not DataWranglingToolsPYtoCPPExists:
                 
-            if convertToShort:
+            if convertToSingle:
             
-                dataValues = np.asarray (dataValues, dtype = np.int16)
+                dataValues = np.asarray (dataValues, dtype = np.single)
 
             
             np.seterr (all = 'ignore')
@@ -468,7 +468,9 @@ class DataTools:
 
             # For Band Stop filtering, the  cutoffFrequency  has to be a list of two numbers, the low and the high end of the band stop.
             # For Band Pass filtering, the  cutoffFrequency  has to be a number, not a list.
-            if (filterType == 'bandstop' and type (cutoffFrequency) == list) or (filterType != 'bandstop' and type (cutoffFrequency) != list):
+            if (filterType == 'bandstop' and type (cutoffFrequency) == list) or \
+               (filterType == 'bandpass' and type (cutoffFrequency) == list) or \
+               (filterType != 'bandstop' and type (cutoffFrequency) != list):
              
                 # Design the filter using the signal.butter method (Second Order Sequence).
                 secondfilterOrderSections = signal.butter (filterOrder, cutoffFrequency, btype = filterType, fs = samplingFrequency, output = 'sos')

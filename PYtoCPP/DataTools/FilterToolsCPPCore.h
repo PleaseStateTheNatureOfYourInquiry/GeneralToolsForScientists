@@ -10,7 +10,7 @@ class FilterToolsCPPCore {
         ~FilterToolsCPPCore ();
                 
         void passAverageFilter ( 
-            int listOfNumbers [1], //1
+            float listOfNumbers [1], //1
             float listOfNumbersFiltered [1], //2
             int numberOfElements, //3
             int widthOfWindow //4           

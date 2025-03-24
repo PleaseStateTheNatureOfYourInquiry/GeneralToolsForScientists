@@ -17,11 +17,11 @@ DataWranglingToolsCPPCore::~DataWranglingToolsCPPCore () {};
 
 
 void DataWranglingToolsCPPCore::getSegmentSpecsFromDataValues ( 
-    short dataValues [1], //1
+    float dataValues [1], //1
     unsigned int numberOfDataValues, //2
     unsigned int segmentStartIndices [1], //3
     unsigned int& numberOfSegments, //4
-    int segmentAmplitudes [1], //5
+    float segmentAmplitudes [1], //5
     float segmentSlopes [1], //6
     unsigned int segmentDurations [1], //7
     unsigned int segmentStartIndicesNegative [1], //8
@@ -35,7 +35,7 @@ void DataWranglingToolsCPPCore::getSegmentSpecsFromDataValues (
 )                                                        
 {
 
-    int deltaValue;
+    float deltaValue;
 
 
 // ATTENTION: Use these variable as an index counter, until the end of this function.
@@ -92,7 +92,7 @@ void DataWranglingToolsCPPCore::getSegmentSpecsFromDataValues (
         {
                    
             segmentDurations [numberOfSegments] = numberOfSamplesInSegment;
-            segmentSlopes [numberOfSegments] = static_cast <float> ( segmentAmplitudes [numberOfSegments] ) / segmentDurations [numberOfSegments];
+            segmentSlopes [numberOfSegments] = segmentAmplitudes [numberOfSegments] / segmentDurations [numberOfSegments];
   
             // Reset the number of samples in the new segment to 1.
             numberOfSamplesInSegment = 1;
@@ -145,7 +145,7 @@ void DataWranglingToolsCPPCore::getSegmentSpecsFromDataValues (
     
 
     segmentDurations [numberOfSegments] = numberOfSamplesInSegment;
-    segmentSlopes [numberOfSegments] = static_cast<float> ( segmentAmplitudes [numberOfSegments] ) / segmentDurations [numberOfSegments];
+    segmentSlopes [numberOfSegments] = segmentAmplitudes [numberOfSegments] / segmentDurations [numberOfSegments];
 
     // First check if the new segment is the steepest of the negative or positive slopes.
     if ( segmentAmplitudes [numberOfSegments] < 0 )

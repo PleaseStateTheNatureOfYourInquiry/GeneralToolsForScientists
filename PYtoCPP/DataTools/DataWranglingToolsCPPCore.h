@@ -10,11 +10,11 @@ class DataWranglingToolsCPPCore {
         ~DataWranglingToolsCPPCore ();
         
         void getSegmentSpecsFromDataValues ( 
-            short dataValues [1], //1
+            float dataValues [1], //1
             unsigned int numberOfDataValues, //2                          
             unsigned int segmentStartIndices [1], //3
             unsigned int& numberOfSegments, //4
-            int segmentAmplitudes [1], //5
+            float segmentAmplitudes [1], //5
             float segmentSlopes [1], //6
             unsigned int segmentDurations [1], //7
             unsigned int segmentStartIndicesNegative [1], //8

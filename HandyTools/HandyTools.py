@@ -347,6 +347,8 @@ class HandyTools:
 
                 # Depending on the structure of the table and the separator character it is possible the split function returns some empty strings.
                 # Make sure that those empty elements are not taken into account.
+
+                # Count the line with maximum number of elements. 
                 listOfColumnsValuesFirstLine = [ element  for element in tableContent [iHeaderEnd + 1].split (separatorString)  if element != '' ] 
                 numberOfEntriesPerLine = len (listOfColumnsValuesFirstLine)
 
@@ -355,8 +357,9 @@ class HandyTools:
                        
                 # Go through each element on the line: elements are based on the  separatorString
                 for iTableContent in range (iHeaderEnd + 1, numberOfLines):
-                
+                               
                     listOfColumnsValuesCurrentLine = [ element  for element in tableContent [iTableContent].split (separatorString)  if element != '' ]
+
                     for iDataValueString, dataValuesString in enumerate (listOfColumnsValuesCurrentLine):
 
                         tableContentDataStrings [iDataValueString].append ( dataValuesString.strip () )  
